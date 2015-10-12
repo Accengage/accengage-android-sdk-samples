@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="AppTheme.Light" parent="android:Theme.Material.Light">
+
+        <!-- Main theme colors -->
+        <!-- your app branding color for the app bar -->
+        <item name="android:colorPrimary">#607D8B</item>
+        <!-- darker variant for the status bar and contextual app bars -->
+        <item name="android:colorPrimaryDark">#455A64</item>
+        <!-- theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">#536DFE</item>
+
+        <!-- enable window content transitions -->
+        <item name="android:windowContentTransitions">true</item>
+
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/slide_bottom</item>
+    </style>
+
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">A4S Events</string>
+    <string name="event_lead">Send lead</string>
+    <string name="event_cart">Send cart</string>
+    <string name="event_purchase">Send purchase</string>
+</resources>

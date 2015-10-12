@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ * Example Landing Page template
+ * Can be used to show a custom LandingPage on In-App/Richpush click
+ -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/com_ad4screen_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/com_ad4screen_sdk_actionbar_size"
+        android:background="@drawable/com_ad4screen_sdk_actionbar_background_top_holo_dark" >
+
+        <Button
+            android:id="@+id/com_ad4screen_sdk_closebutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/com_ad4screen_sdk_logo"
+            android:background="@drawable/com_ad4screen_sdk_borderless_button" />
+
+        <ImageView
+            android:id="@+id/com_ad4screen_sdk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/com_ad4screen_sdk_back_dark"
+            android:contentDescription="@string/a4s_content_back" />
+
+        <ImageView
+            android:id="@+id/com_ad4screen_sdk_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/com_ad4screen_sdk_back"
+            android:contentDescription="@string/a4s_content_back" />
+
+        <TextView
+            android:id="@+id/com_ad4screen_sdk_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/com_ad4screen_sdk_logo"
+            android:maxLines="1"
+            android:textSize="18dp"
+            android:textColor="#ff0000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/com_ad4screen_sdk_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#FFF"
+        android:layout_below="@id/com_ad4screen_actionbar"
+        android:layout_above="@+id/com_ad4screen_sdk_buttonbar"
+        android:visibility="gone" />
+
+    <WebView
+        android:id="@+id/com_ad4screen_sdk_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/com_ad4screen_actionbar"
+        android:layout_above="@+id/com_ad4screen_sdk_buttonbar"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/com_ad4screen_sdk_buttonbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/com_ad4screen_sdk_actionbar_size"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/com_ad4screen_sdk_actionbar_background_bottom_holo_dark"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal" >
+
+        <ProgressBar
+            android:id="@+id/com_ad4screen_sdk_progress"
+            android:layout_width="@dimen/com_ad4screen_sdk_actionbar_icon_size"
+            android:layout_height="@dimen/com_ad4screen_sdk_actionbar_icon_size" />
+        
+        <Button android:id="@+id/com_ad4screen_sdk_backbutton" 
+                android:layout_width="@dimen/com_ad4screen_sdk_actionbar_icon_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/com_ad4screen_sdk_backbutton"
+                />
+        <Button
+            android:id="@+id/com_ad4screen_sdk_forwardbutton"
+            android:layout_width="@dimen/com_ad4screen_sdk_actionbar_icon_size"
+            android:layout_height="match_parent"
+            android:background="@drawable/com_ad4screen_sdk_forwardbutton" />
+
+		<ToggleButton
+            android:id="@+id/com_ad4screen_sdk_reloadbutton"
+            android:layout_width="@dimen/com_ad4screen_sdk_actionbar_icon_size"
+            android:layout_height="match_parent"
+            android:background="@drawable/com_ad4screen_sdk_reloadbutton"
+            android:textOff=""
+            android:textOn="" />
+
+        <Button
+            android:id="@+id/com_ad4screen_sdk_browsebutton"
+            android:layout_width="@dimen/com_ad4screen_sdk_actionbar_icon_size"
+            android:layout_height="match_parent"
+            android:background="@drawable/com_ad4screen_sdk_browsebutton" />
+    </LinearLayout>
+
+</RelativeLayout>

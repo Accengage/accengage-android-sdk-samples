@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">A4S Sample</string>
+    <string name="title_activity_coffee_maker" >A4S Coffee</string>
+    <string name="title_activity_make_coffee">Brew coffee</string>
+    <string name="title_activity_coffee_settings">Coffee settings</string>
+    
+
+</resources>

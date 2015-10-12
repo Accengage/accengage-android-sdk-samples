@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:enabled="true">
+    <CheckBoxPreference android:summaryOn="You Will not see any in-app notifications"
+        android:summaryOff="You Will see all in-app notifications" android:key="displayLocked" android:title="InApp Display Locked"/>
+    
+
+</PreferenceScreen>

@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/menu_get_messages"
+        android:orderInCategory="2"
+        android:showAsAction="ifRoom"
+        android:title="Refresh Messages"
+        android:icon="@android:drawable/ic_menu_rotate"/>
+    
+    <item
+        android:id="@+id/menu_reset"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:orderInCategory="3"
+        android:showAsAction="ifRoom"
+        android:title="Reset"/>
+
+
+</menu>

@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">A4S Inbox</string>
+    
+    <string name="inbox_date_yesterday">Hier</string>
+    <string name="inbox_date_days_ago">Il y a %1$s jours</string>
+    <string name="inbox_date_last_week">Semaine dernière</string>
+    <string name="inbox_date_weeks_ago">Il y a %1$s mois</string>
+    <string name="inbox_date_last_month">Mois dernier</string>
+    <string name="inbox_date_months_ago">Plus de 2 mois</string>
+
+</resources>
