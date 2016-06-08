@@ -52,42 +52,50 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 Button buttonInform = (Button) layout.findViewById(R.id.btn_inform);
-                buttonInform.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Zone1, track CLICK", Toast.LENGTH_SHORT).show();
-                        mInApp.setClickZone("Zone1");
-                        mInApp.handleClick();
-                    }
-                });
+                if (buttonInform != null) {
+                    buttonInform.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this, "Zone1, track CLICK", Toast.LENGTH_SHORT).show();
+                            mInApp.setClickZone("Zone1");
+                            mInApp.handleClick();
+                        }
+                    });
+                }
 
                 Button buttonLater = (Button) layout.findViewById(R.id.btn_later);
-                buttonLater.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Zone2, track CLICK", Toast.LENGTH_SHORT).show();
-                        mInApp.setClickZone("Zone2");
-                        mInApp.handleClick();
-                    }
-                });
+                if (buttonLater != null) {
+                    buttonLater.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this, "Zone2, track CLICK", Toast.LENGTH_SHORT).show();
+                            mInApp.setClickZone("Zone2");
+                            mInApp.handleClick();
+                        }
+                    });
+                }
 
                 ImageView iv = (ImageView) layout.findViewById(R.id.iv_close);
-                iv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Zone#Close, track CLOSE", Toast.LENGTH_SHORT).show();
-                        mInApp.setClickZone("Zone#Close");
-                        mInApp.dismiss();
-                    }
-                });
+                if (iv != null) {
+                    iv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this, "Zone#Close, track CLOSE", Toast.LENGTH_SHORT).show();
+                            mInApp.setClickZone("Zone#Close");
+                            mInApp.dismiss();
+                        }
+                    });
+                }
 
                 LinearLayout layoutBanner = (LinearLayout) layout.findViewById(R.id.ll_banner);
-                layoutBanner.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "The zone is not used", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                if (layoutBanner != null) {
+                    layoutBanner.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this, "The zone is not used", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
 
             @Override
@@ -97,4 +105,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }
