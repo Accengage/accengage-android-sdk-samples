@@ -1,6 +1,5 @@
 package com.a4s.geofences;
 
-import android.*;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.a4s.sdk.plugins.annotations.UseA4S;
@@ -46,5 +46,14 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     LOCATION_REQUEST);
         }
+
+        Button button = (Button) findViewById(R.id.btn_view_geofences);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DBViewerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

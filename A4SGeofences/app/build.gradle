@@ -33,8 +33,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
-    compile 'com.ad4screen.sdk:A4SSDK:3.3.+'
-    compile files('libs/A4SSDK-GooglePlayServices-1.6.jar')
-    compile 'com.google.android.gms:play-services-location:8.1.0'
-    compile 'com.google.android.gms:play-services-base:8.1.0'
+
+    compile group: 'com.ad4screen.sdk', name: 'plugin-play-services-base', version: 'SNAPSHOT', changing: true
+    compile group: 'com.ad4screen.sdk', name: 'plugin-play-services-location', version: 'SNAPSHOT', changing: true
+    compile group: 'com.ad4screen.sdk', name: 'plugin-play-services-geofence', version: 'SNAPSHOT', changing: true
+
+    //compile 'com.ad4screen.sdk:A4SSDK:3.4.+'
+    compile group: 'com.ad4screen.sdk', name: 'A4SSDK', version: 'SNAPSHOT', changing: true
+
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
 }

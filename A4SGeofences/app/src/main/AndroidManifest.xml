@@ -22,10 +22,10 @@
             android:process=":A4SService" >
             <meta-data
                 android:name="com.ad4screen.partnerid"
-                android:value="comptedemosdk2d0e8680a7acc7f" />
+                android:value="testsadscreenaba63a1a2584b58" />
             <meta-data
                 android:name="com.ad4screen.privatekey"
-                android:value="a8161ed9ef9fb146c1e252dee2ffaf0a84039092" />
+                android:value="51f50b8bf4efff2d2e0d41a3e5874e7c9579816e" />
             <meta-data
                 android:name="com.ad4screen.logging"
                 android:value="true" />
@@ -56,6 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".DBViewerActivity"/>
+        <activity android:name=".DBPreferencesActivity"/>
+
     </application>
 
 </manifest>
