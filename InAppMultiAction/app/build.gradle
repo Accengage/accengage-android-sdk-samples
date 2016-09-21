@@ -24,6 +24,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
-    //compile 'com.ad4screen.sdk:A4SSDK:3.5.0'
-    compile group: 'com.ad4screen.sdk', name: 'A4SSDK', version: 'SNAPSHOT', changing: true
+    compile 'com.ad4screen.sdk:A4SSDK:3.5.0.1'
+    //compile group: 'com.ad4screen.sdk', name: 'A4SSDK', version: 'SNAPSHOT', changing: true
 }

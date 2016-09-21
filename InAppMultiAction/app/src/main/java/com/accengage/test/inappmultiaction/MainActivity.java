@@ -1,5 +1,7 @@
 package com.accengage.test.inappmultiaction;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,12 +18,15 @@ import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.InApp;
 
+import java.util.HashMap;
+
 @UseA4S
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
     private InApp mInApp = null;
+    private String mActionUrl = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,15 @@ public class MainActivity extends AppCompatActivity {
             public void onResult(InApp inapp) {
                 Log.d(TAG, "InAppInflatedCallback");
                 mInApp = inapp;
-                FrameLayout layout = inapp.getLayout();
+                HashMap<String, String> params = mInApp.getCustomParameters();
 
+                android.util.Log.d(TAG, "Custom display parameters: " + params);
+                if (params.containsKey("action_url")) {
+                    mActionUrl = params.get("action_url");
+                }
+
+
+                FrameLayout layout = inapp.getLayout();
                 WebView webview = (WebView) layout.findViewById(R.id.com_ad4screen_sdk_webview);
                 if (webview != null) {
                     webview.setOnTouchListener(new View.OnTouchListener() {
@@ -56,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
                     buttonInform.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            // If the action url is not null, open it in a browser
+                            if (mActionUrl != null) {
+                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mActionUrl));
+                                startActivity(browserIntent);
+                            }
+                            // Set tracking zone for tracking and close inapp
                             Toast.makeText(MainActivity.this, "Zone1, track CLICK", Toast.LENGTH_SHORT).show();
                             mInApp.setClickZone("Zone1");
                             mInApp.handleClick();
