@@ -6,4 +6,10 @@
         Please set some geofences into the user interface and try to enter or exit these geofences in order to trigger some pushes or In-App.<br><br>
         If you want to mock location, you can use the following application :<br>com.lexa.fakegps
         ]]></string>
+
+    <string name="geofence_sorting_keyword">geofence_sorting_keyword</string>
+    <string name="geofence_sorting_order">geofence_sorting_order</string>
+    <string name="geofence_opt_in_db_test">geofence_opt_in_db_test</string>
+    <string name="geofence_opt_in_notifications">geofence_opt_in_notifications</string>
+
 </resources>

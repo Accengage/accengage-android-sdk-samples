@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Sorting"
+        android:key="geofence_sorting_category">
+
+        <ListPreference
+            android:key="@string/geofence_sorting_keyword"
+            android:title="Sort by"
+            android:summary="Choose a field by which geofences will be sorted"
+            android:entries="@array/geofence_sorting_fields"
+            android:entryValues="@array/geofence_sorting_fields_values"
+            android:defaultValue=""/>
+
+        <CheckBoxPreference
+            android:key="@string/geofence_sorting_order"
+            android:title="Descending order"
+            android:summary="To sort  geofences in a descending order"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
