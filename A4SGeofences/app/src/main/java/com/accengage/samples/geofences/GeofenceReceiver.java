@@ -1,4 +1,4 @@
-package com.a4s.geofences;
+package com.accengage.samples.geofences;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
+import android.util.Log;
 
 import com.ad4screen.sdk.Constants;
+
+import java.util.Arrays;
 
 
 public class GeofenceReceiver extends BroadcastReceiver {
@@ -27,6 +30,9 @@ public class GeofenceReceiver extends BroadcastReceiver {
         //(Note : you will have to parse it as a JSONObject)
         //Keys are : provider, latitude, longitude, altitude, accuracy, bearing, speed, time)
         String location = geofenceData.getString("triggeringLocation");
+        if (location != null) {
+            Log.d("GeofenceReceiver", "location: " + location);
+        }
 
         //Do anything you want, here we will show a notification
         Intent notifIntent = new Intent(context, MainActivity.class);
@@ -35,9 +41,9 @@ public class GeofenceReceiver extends BroadcastReceiver {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context);
         notificationBuilder.setAutoCancel(true)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Geofence(s) Triggered !")
+                .setContentTitle("Geofence(s) triggered!")
                 .setContentText((transitionCode == 1 ? "Enter" : "Exit")
-                        + " - Id(s) : " + geofencesIds)
+                        + " - Id(s) : " + Arrays.toString(geofencesIds))
                 .setContentIntent(pendingIntent);
 
         int id = (int) (Math.random() * 10000);

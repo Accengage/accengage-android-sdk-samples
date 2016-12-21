@@ -1,4 +1,4 @@
-package com.a4s.geofences;
+package com.accengage.samples.geofences;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

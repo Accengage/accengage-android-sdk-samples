@@ -1,4 +1,4 @@
-package com.a4s.geofences;
+package com.accengage.samples.geofences;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

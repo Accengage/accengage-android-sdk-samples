@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">A4S Geofences</string>
+    <string name="app_name">Acc Geofences</string>
 
     <string name="main_textview">
         <![CDATA[
@@ -11,5 +11,13 @@
     <string name="geofence_sorting_order">geofence_sorting_order</string>
     <string name="geofence_opt_in_db_test">geofence_opt_in_db_test</string>
     <string name="geofence_opt_in_notifications">geofence_opt_in_notifications</string>
+
+    <!-- Accengage SDK parameters -->
+
+    <!-- Credentials for 'Ap Demo Accengage Android Clients' -->
+    <string name="a4s_partner_id">comptedemosdk1e3b35fb8ad5024</string>
+    <string name="a4s_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
+
+    <string name="a4s_logging">true</string>
 
 </resources>

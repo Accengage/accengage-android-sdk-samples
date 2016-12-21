@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.a4s.geofences" >
-
-    <permission
-        android:name="com.a4s.geofences.permission.A4S_SEND"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.a4s.geofences.permission.A4S_SEND" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    package="com.accengage.samples.geofences" >
 
     <application
         android:allowBackup="true"
@@ -15,31 +8,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-        <!-- [A4S-SDK[ -->
-        <service
-            android:name="com.ad4screen.sdk.A4SService"
-            android:label="A4S Service"
-            android:process=":A4SService" >
-            <meta-data
-                android:name="com.ad4screen.partnerid"
-                android:value="testsadscreenaba63a1a2584b58" />
-            <meta-data
-                android:name="com.ad4screen.privatekey"
-                android:value="51f50b8bf4efff2d2e0d41a3e5874e7c9579816e" />
-            <meta-data
-                android:name="com.ad4screen.logging"
-                android:value="true" />
-        </service>
-
-        <!-- [A4S-Geofencing[ -->
-        <service
-            android:name="com.ad4screen.sdk.A4SGeofencingService"
-            android:exported="false" />
-        <!-- ]] -->
-
         <receiver
             android:name=".GeofenceReceiver"
-            android:permission="com.a4s.geofences.permission.A4S_SEND" >
+            android:permission="com.accengage.samples.geofences.permission.A4S_SEND" >
             <intent-filter>
                 <action android:name="com.ad4screen.sdk.intent.action.TRIGGER" />
 
