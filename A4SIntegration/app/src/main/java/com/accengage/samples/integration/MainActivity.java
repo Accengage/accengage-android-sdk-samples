@@ -9,6 +9,6 @@ public class MainActivity extends A4SActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.accengage.samples.R.layout.activity_main);
+        setContentView(com.accengage.samples.integration.R.layout.activity_main);
     }
 }
