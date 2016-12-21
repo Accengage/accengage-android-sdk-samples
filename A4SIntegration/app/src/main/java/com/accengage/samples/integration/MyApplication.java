@@ -1,4 +1,4 @@
-package com.a4s.a4sintegration;
+package com.accengage.samples.integration;
 
 import com.ad4screen.sdk.A4SApplication;
 
