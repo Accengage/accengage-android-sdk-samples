@@ -1,14 +1,4 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.a4s.sdk:usea4s-plugin:1.0.3'
-    }
-}
-
 apply plugin: 'com.android.application'
-apply plugin: 'usea4s'
 
 android {
     compileSdkVersion 23

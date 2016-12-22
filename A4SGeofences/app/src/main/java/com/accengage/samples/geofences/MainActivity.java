@@ -13,9 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.a4s.sdk.plugins.annotations.UseA4S;
+import com.ad4screen.sdk.A4S;
 
-@UseA4S
 public class MainActivity extends AppCompatActivity {
     private static final int LOCATION_REQUEST = 1;
 
@@ -55,5 +54,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        A4S.get(this).setIntent(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        A4S.get(this).startActivity(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        A4S.get(this).stopActivity(this);
     }
 }
