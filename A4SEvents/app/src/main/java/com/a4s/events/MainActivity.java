@@ -1,6 +1,7 @@
 package com.a4s.events;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -10,15 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.analytics.Cart;
 import com.ad4screen.sdk.analytics.Item;
 import com.ad4screen.sdk.analytics.Lead;
 import com.ad4screen.sdk.analytics.Purchase;
 
-@UseA4S
 public class MainActivity extends AppCompatActivity {
+
     private static final int LOCATION_REQUEST = 1;
 
     @Override
@@ -70,4 +70,23 @@ public class MainActivity extends AppCompatActivity {
                     LOCATION_REQUEST);
         }
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        A4S.get(this).setIntent(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        A4S.get(this).startActivity(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        A4S.get(this).stopActivity(this);
+    }
+
 }
