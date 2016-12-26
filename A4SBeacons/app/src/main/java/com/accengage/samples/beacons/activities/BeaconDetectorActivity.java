@@ -1,4 +1,4 @@
-package com.a4s.beacons.activities;
+package com.accengage.samples.beacons.activities;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -17,7 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.a4s.beacons.R;
+import com.accengage.samples.beacons.R;
 import com.ad4screen.sdk.Constants;
 import com.ad4screen.sdk.activities.A4SActivity;
 

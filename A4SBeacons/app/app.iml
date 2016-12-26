@@ -109,7 +109,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-annotations-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.4.0" level="project" />
-    <orderEntry type="library" exported="" name="A4SSDK-Beacons-1.0" level="project" />
     <orderEntry type="library" exported="" name="A4SSDK-Plugin-Badger-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="A4SSDK-3.6.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.0.1" level="project" />

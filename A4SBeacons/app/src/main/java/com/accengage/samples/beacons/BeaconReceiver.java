@@ -1,4 +1,4 @@
-package com.a4s.beacons;
+package com.accengage.samples.beacons;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
-import com.a4s.beacons.activities.MainActivity;
+import com.accengage.samples.beacons.activities.MainActivity;
 import com.ad4screen.sdk.Constants;
 
 public class BeaconReceiver extends BroadcastReceiver {

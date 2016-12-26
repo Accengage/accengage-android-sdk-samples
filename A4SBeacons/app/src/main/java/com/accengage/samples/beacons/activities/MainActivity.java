@@ -1,4 +1,4 @@
-package com.a4s.beacons.activities;
+package com.accengage.samples.beacons.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,7 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
-import com.a4s.beacons.R;
+import com.accengage.samples.beacons.R;
 import com.ad4screen.sdk.A4S;
 
 public class MainActivity extends Activity {
