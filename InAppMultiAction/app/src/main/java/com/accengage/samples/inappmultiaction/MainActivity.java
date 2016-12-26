@@ -1,4 +1,4 @@
-package com.accengage.test.inappmultiaction;
+package com.accengage.samples.inappmultiaction;
 
 import android.content.Intent;
 import android.net.Uri;
