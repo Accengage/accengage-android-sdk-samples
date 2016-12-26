@@ -1,4 +1,4 @@
-package com.a4s.inbox.activities;
+package com.accengage.samples.inbox.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -22,10 +22,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.a4s.inbox.R;
-import com.a4s.inbox.adapters.MessagesAdapter;
-import com.a4s.inbox.adapters.MessagesAdapter.OnMessageCheckedListener;
-import com.a4s.inbox.models.InboxMessage;
+import com.accengage.samples.inbox.R;
+import com.accengage.samples.inbox.adapters.MessagesAdapter;
+import com.accengage.samples.inbox.adapters.MessagesAdapter.OnMessageCheckedListener;
+import com.accengage.samples.inbox.models.InboxMessage;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.A4S.Callback;
 import com.ad4screen.sdk.A4S.MessageCallback;

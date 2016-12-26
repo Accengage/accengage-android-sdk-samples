@@ -1,4 +1,4 @@
-package com.a4s.inbox.models;
+package com.accengage.samples.inbox.models;
 
 import java.util.Date;
 

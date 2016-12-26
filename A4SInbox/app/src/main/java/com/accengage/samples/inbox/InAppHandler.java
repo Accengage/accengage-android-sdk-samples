@@ -1,4 +1,4 @@
-package com.a4s.inbox;
+package com.accengage.samples.inbox;
 
 import java.util.Set;
 

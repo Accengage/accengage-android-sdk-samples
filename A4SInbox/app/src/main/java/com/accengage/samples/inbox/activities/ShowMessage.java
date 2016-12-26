@@ -1,4 +1,4 @@
-package com.a4s.inbox.activities;
+package com.accengage.samples.inbox.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.a4s.inbox.R;
+import com.accengage.samples.inbox.R;
 import com.ad4screen.sdk.Message;
 import com.ad4screen.sdk.Message.MessageContentType;
 import com.ad4screen.sdk.Message.onIconDownloadedListener;

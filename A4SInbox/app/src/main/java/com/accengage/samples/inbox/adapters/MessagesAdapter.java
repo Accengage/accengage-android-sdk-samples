@@ -1,4 +1,4 @@
-package com.a4s.inbox.adapters;
+package com.accengage.samples.inbox.adapters;
 
 import java.util.ArrayList;
 
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.a4s.inbox.models.InboxMessage;
-import com.a4s.inbox.views.InboxCellView;
+import com.accengage.samples.inbox.models.InboxMessage;
+import com.accengage.samples.inbox.views.InboxCellView;
 import com.ad4screen.sdk.A4S.MessageCallback;
 import com.ad4screen.sdk.Inbox;
 import com.ad4screen.sdk.Message;

@@ -1,4 +1,4 @@
-package com.a4s.inbox.views;
+package com.accengage.samples.inbox.views;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,9 +19,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.a4s.inbox.R;
-import com.a4s.inbox.adapters.MessagesAdapter.OnMessageCheckedListener;
-import com.a4s.inbox.models.InboxMessage;
+import com.accengage.samples.inbox.R;
+import com.accengage.samples.inbox.adapters.MessagesAdapter.OnMessageCheckedListener;
+import com.accengage.samples.inbox.models.InboxMessage;
 import com.ad4screen.sdk.Message.onIconDownloadedListener;
 /**
  * InboxCellView
