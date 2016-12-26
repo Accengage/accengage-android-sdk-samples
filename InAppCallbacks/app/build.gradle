@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'usea4s'
 
 android {
     compileSdkVersion 23
@@ -24,5 +23,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.ad4screen.sdk:A4SSDK:3.4.0'
+
+    compile 'com.ad4screen.sdk:A4SSDK:3.6.+'
 }

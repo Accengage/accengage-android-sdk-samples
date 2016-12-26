@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onStart");
         A4S.get(this).startActivity(this);
 
-
         // register in-app callbacks
         A4S.get(this).setInAppReadyCallback(false, new A4S.Callback<InApp>() {
             @Override
