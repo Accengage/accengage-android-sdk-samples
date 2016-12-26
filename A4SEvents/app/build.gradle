@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.a4s.events"
+        applicationId "com.accengage.samples.events"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

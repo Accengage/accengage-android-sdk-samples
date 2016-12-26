@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.a4s.events" >
+    package="com.accengage.samples.events" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.a4s.events.MainActivity"
+            android:name="com.accengage.samples.events.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

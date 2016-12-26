@@ -1,4 +1,4 @@
-package com.a4s.events;
+package com.accengage.samples.events;
 
 import android.Manifest;
 import android.content.Intent;
