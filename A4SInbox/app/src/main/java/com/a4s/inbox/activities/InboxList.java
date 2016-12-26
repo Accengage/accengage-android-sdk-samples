@@ -1,7 +1,5 @@
 package com.a4s.inbox.activities;
 
-import java.util.ArrayList;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -24,7 +22,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.a4s.inbox.R;
 import com.a4s.inbox.adapters.MessagesAdapter;
 import com.a4s.inbox.adapters.MessagesAdapter.OnMessageCheckedListener;
@@ -36,12 +33,13 @@ import com.ad4screen.sdk.Inbox;
 import com.ad4screen.sdk.Message;
 import com.ad4screen.sdk.Tag;
 
+import java.util.ArrayList;
+
 /**
  * InboxList
  * List all inbox messages of this device
  * @author Jonathan Salamon/Jean-Vincent D'Adda 
  */
-@UseA4S
 @Tag(name = "InboxList")
 public class InboxList extends Activity {
 
@@ -165,25 +163,33 @@ public class InboxList extends Activity {
 	}
 
 	@Override
-	protected void onPause() {
-		if (mInbox != null) {
-			// Synchronize any changes with SDK
-            A4S.get(InboxList.this).updateMessages(mInbox);
-		}
-		super.onPause();
-	}
-
-	@Override
 	protected void onResume() {
 		super.onResume();
+		A4S.get(this).startActivity(this);
 		startRefreshing();
 		if (mInbox != null) {
 			// if we have already an inbox, display it
 			mInboxCallback.onResult(mInbox);
 		} else {
 			// otherwise, load it from server
-            A4S.get(this).getInbox(mInboxCallback);
+			A4S.get(this).getInbox(mInboxCallback);
 		}
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		A4S.get(this).setIntent(intent);
+	}
+
+	@Override
+	protected void onPause() {
+		if (mInbox != null) {
+			// Synchronize any changes with SDK
+            A4S.get(InboxList.this).updateMessages(mInbox);
+		}
+		super.onPause();
+		A4S.get(this).stopActivity(this);
 	}
 
 	@Override
