@@ -14,13 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.InApp;
 
 import java.util.HashMap;
 
-@UseA4S
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -123,5 +121,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        A4S.get(this).setIntent(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        A4S.get(this).startActivity(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        A4S.get(this).stopActivity(this);
+    }
+
 
 }

@@ -2,12 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.accengage.test.inappmultiaction">
 
-    <permission
-        android:name="com.accengage.test.inappmultiaction.permission.A4S_SEND"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.accengage.test.inappmultiaction.permission.A4S_SEND" />
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -15,6 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,24 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.ad4screen.sdk.A4SService"
-            android:label="A4S Service"
-            android:process=":A4SService">
-            <meta-data
-                android:name="com.ad4screen.partnerid"
-                android:value="testsadscreenaba63a1a2584b58" />
-            <meta-data
-                android:name="com.ad4screen.privatekey"
-                android:value="51f50b8bf4efff2d2e0d41a3e5874e7c9579816e" />
-            <meta-data
-                android:name="com.ad4screen.logging"
-                android:value="true" />
-            <meta-data
-                android:name="com.ad4screen.no_geoloc"
-                android:value="true" />
-        </service>
 
     </application>
 

@@ -1,9 +1,6 @@
 package com.accengage.test.inappmultiaction;
 
-import android.app.Application;
+import com.ad4screen.sdk.A4SApplication;
 
-import com.a4s.sdk.plugins.annotations.UseA4S;
-
-@UseA4S
-public class MyApplication extends Application {
+public class MyApplication extends A4SApplication {
 }
