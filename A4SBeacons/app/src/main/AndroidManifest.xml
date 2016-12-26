@@ -1,58 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.a4s.beacons" >
 
-    <!-- [A4S-SDK[ -->
-    <permission
-        android:name="com.a4s.beacons.permission.A4S_SEND"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.a4s.beacons.permission.A4S_SEND" />
-    <!-- ]] -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- [A4S-Beacons[ -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <!-- ]] -->
-
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
-        <!-- [A4S-SDK[ -->
-        <service
-            android:name="com.ad4screen.sdk.A4SService"
-            android:label="A4S Service"
-            android:process=":A4SService" >
-            <meta-data
-                android:name="com.ad4screen.partnerid"
-                android:value="testsadscreenaba63a1a2584b58" />
-            <meta-data
-                android:name="com.ad4screen.privatekey"
-                android:value="51f50b8bf4efff2d2e0d41a3e5874e7c9579816e" />
-            <meta-data
-                android:name="com.ad4screen.logging"
-                android:value="true" />
-        </service>
-
-        <!-- [A4S-Beacon[ -->
-        <service
-            android:name="com.ad4screen.sdk.A4SBeaconService"
-            android:exported="true" />
-
-        <receiver
-            android:name="com.ad4screen.sdk.BeaconReceiver"
-            android:permission="com.a4s.beacons.permission.A4S_SEND" >
-            <intent-filter>
-                <action android:name="com.ad4screen.sdk.intent.action.QUERY" />
-                <action android:name="com.ad4screen.sdk.intent.action.TRIGGER" />
-
-                <category android:name="com.ad4screen.sdk.intent.category.BEACON_NOTIFICATIONS" />
-            </intent-filter>
-        </receiver>
-        <!-- ]] -->
 
         <activity
             android:name=".activities.MainActivity"
@@ -65,21 +22,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.BeaconDetectorActivity"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme" />
+
         <receiver
             android:name=".BeaconReceiver"
             android:permission="com.a4s.beacons.permission.A4S_SEND" >
             <intent-filter>
                 <action android:name="com.ad4screen.sdk.intent.action.TRIGGER" />
-
                 <category android:name="com.ad4screen.sdk.intent.category.BEACON_NOTIFICATIONS" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

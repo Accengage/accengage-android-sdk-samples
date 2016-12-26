@@ -9,12 +9,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
-
 import com.a4s.beacons.R;
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 
-@UseA4S
 public class MainActivity extends Activity {
 	private static final int LOCATION_REQUEST = 1;
 
@@ -45,6 +42,24 @@ public class MainActivity extends Activity {
 
 					}
 				});
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		A4S.get(this).setIntent(intent);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		A4S.get(this).startActivity(this);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		A4S.get(this).stopActivity(this);
 	}
 
 }
