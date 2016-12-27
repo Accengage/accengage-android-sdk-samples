@@ -24,7 +24,7 @@ import java.util.HashMap;
  * - inapp_promo: Promotion code
  * - inapp_bg: Background color
  */
-public class BannerOfferPromoView extends AccengageView {
+public class BannerOfferPromoView extends CustomInAppLayout {
 
     private TextView mTvTitle;
     private TextView mTvDesc;
@@ -61,30 +61,36 @@ public class BannerOfferPromoView extends AccengageView {
     }
 
     @Override
-    public void setInApp(final InApp inApp) {
+    public void populate(InApp inApp) {
+        super.populate(inApp);
+
         HashMap<String, String> customParameters = inApp.getCustomParameters();
 
-        mTvTitle.setText(customParameters.get(getResources().getString(R.string.inapp_title)));
-        mTvDesc.setText(customParameters.get(getResources().getString(R.string.inapp_text1)));
-        mTvCTA.setText(customParameters.get(getResources().getString(R.string.inapp_text2)));
-        mTvPromocode.setText(customParameters.get(getResources().getString(R.string.inapp_promo)));
+        mTvTitle.setText(customParameters.get("inapp_title"));
+        mTvDesc.setText(customParameters.get("inapp_text1"));
+        mTvCTA.setText(customParameters.get("inapp_text2"));
+        mTvPromocode.setText(customParameters.get("inapp_promo"));
 
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.dismiss();
+                mInApp.dismiss();
             }
         });
 
         mContentLayout.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.handleClick();
+                mInApp.handleClick();
                 Toast.makeText(getContext(), "BannerOfferPromo was clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
-        mContentLayout.setBackgroundColor(Color.parseColor(customParameters.get(getResources().getString(R.string.inapp_bg))));
+
+        String background = customParameters.get("inapp_bg");
+        if (!background.isEmpty()) {
+            mContentLayout.setBackgroundColor(Color.parseColor(customParameters.get("inapp_bg")));
+        }
     }
 }
 

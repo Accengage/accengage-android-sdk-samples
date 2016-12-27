@@ -1,27 +1,13 @@
 <resources>
-    <string name="app_name">Acc Custom Inapp</string>
+    <string name="app_name">CustomInapps</string>
 
     <!-- Accengage SDK parameters -->
 
     <!-- Credentials for 'Ap Demo Accengage Android Clients' -->
     <string name="a4s_partner_id">comptedemosdk1e3b35fb8ad5024</string>
     <string name="a4s_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
-    <string name="a4s_sender_id">fcm:378374402887</string>
 
     <string name="a4s_logging">true</string>
-
-    <!-- Custom InApps keys -->
-    <string name="inapp_title">inapp_title</string>
-
-    <string name="inapp_text1">inapp_text1</string>
-    <string name="inapp_text2">inapp_text2</string>
-    <string name="inapp_text3">inapp_text3</string>
-
-    <string name="inapp_cta">inapp_cta</string>
-    <string name="inapp_cta2">inapp_cta2</string>
-
-    <string name="inapp_promo">inapp_promo</string>
-    <string name="inapp_img">inapp_img</string>
-    <string name="inapp_bg">inapp_bg</string>
+    <string name="a4s_no_geoloc">true</string>
 
 </resources>

@@ -2,7 +2,7 @@ package com.accengage.sample.custominapps;
 
 import android.content.Context;
 
-import com.accengage.sample.custominapps.customviews.AccengageView;
+import com.accengage.sample.custominapps.customviews.CustomInAppLayout;
 import com.accengage.sample.custominapps.customviews.BannerDownView;
 import com.accengage.sample.custominapps.customviews.BannerOfferPromoView;
 import com.accengage.sample.custominapps.customviews.BannerOfferView;
@@ -12,7 +12,7 @@ import com.accengage.sample.custominapps.customviews.PopupPromoView;
 
 public class AccengageCustomViewFactory {
 
-    public static AccengageView create(Context context, String template) {
+    public static CustomInAppLayout create(Context context, String template) {
 
         if ("banner_down".equals(template)) {
             return new BannerDownView(context);

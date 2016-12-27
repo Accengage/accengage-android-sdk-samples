@@ -23,7 +23,7 @@ import java.util.HashMap;
  * - inapp_img: Url of a distant image
  * - inapp_cta: Call to action text
  */
-public class PopupPromoView extends AccengageView {
+public class PopupPromoView extends CustomInAppLayout {
 
     private TextView mTvTitle;
     private TextView mTvText1;
@@ -61,37 +61,39 @@ public class PopupPromoView extends AccengageView {
     }
 
     @Override
-    public void setInApp(final InApp inApp) {
+    public void populate(InApp inApp) {
+        super.populate(inApp);
+
         HashMap<String, String> customParameters = inApp.getCustomParameters();
 
-        mTvTitle.setText(customParameters.get(getResources().getString(R.string.inapp_title)));
-        mTvText1.setText(customParameters.get(getResources().getString(R.string.inapp_text1)));
-        mTvText2.setText(customParameters.get(getResources().getString(R.string.inapp_text2)));
-        mTvCTA.setText(customParameters.get(getResources().getString(R.string.inapp_cta)));
+        mTvTitle.setText(customParameters.get("inapp_title"));
+        mTvText1.setText(customParameters.get("inapp_text1"));
+        mTvText2.setText(customParameters.get("inapp_text2"));
+        mTvCTA.setText(customParameters.get("inapp_cta"));
 
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.dismiss();
+                mInApp.dismiss();
             }
         });
 
         mTvCTA.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.handleClick();
+                mInApp.handleClick();
                 Toast.makeText(getContext(), "PopupPromo clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
         Picasso.with(getContext())
-                .load(customParameters.get(getResources().getString(R.string.inapp_img)))
+                .load(customParameters.get("inapp_img"))
                 .into(mImageView);
 
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.dismiss();
+                mInApp.dismiss();
             }
         });
 

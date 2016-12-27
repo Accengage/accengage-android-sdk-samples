@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.accengage.sample.custominapps.customviews.AccengageView;
+import com.accengage.sample.custominapps.customviews.CustomInAppLayout;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.InApp;
 import com.ad4screen.sdk.Log;
@@ -51,24 +51,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                // Setting inclusion views will allow to filter unwanted in-apps.
+                // The corresponding views must be created via Accengage web interface
+                // and selected in your in-apps.
                 switch ((String) listView.getItemAtPosition(position)) {
                     case BANNER_DOWN:
-                        getA4S().setView("BannerDownActivity");
+                        getA4S().setView("BannerDown");
                         break;
                     case BANNER_OFFER:
-                        getA4S().setView("BannerOfferActivity");
+                        getA4S().setView("BannerOffer");
                         break;
                     case BANNER_OFFER_PROMOCODE:
                         getA4S().setView("BannerOfferPromo");
                         break;
                     case POPUP_BASIC:
-                        getA4S().setView("PopupBasicActivity");
+                        getA4S().setView("PopupBasic");
                         break;
                     case POPUP_OFFER:
-                        getA4S().setView("PopupOfferActivity");
+                        getA4S().setView("PopupOffer");
                         break;
                     case POPUP_PROMOCODE:
-                        getA4S().setView("PopupPromoActivity");
+                        getA4S().setView("PopupPromo");
                         break;
                 }
             }
@@ -83,11 +86,11 @@ public class MainActivity extends AppCompatActivity {
         getA4S().setInAppInflatedCallback(new A4S.Callback<InApp>() {
             @Override
             public void onResult(InApp inapp) {
-                AccengageView customView = AccengageCustomViewFactory.create(MainActivity.this, inapp.getDisplayTemplate());
+                CustomInAppLayout customView = AccengageCustomViewFactory.create(MainActivity.this, inapp.getDisplayTemplate());
                 android.util.Log.d("MainActivity", "Template: " + inapp.getDisplayTemplate());
                 Toast.makeText(MainActivity.this, "Template: " + inapp.getDisplayTemplate(), Toast.LENGTH_LONG).show();
                 if (customView != null) {
-                    customView.setInApp(inapp);
+                    customView.populate(inapp);
                     FrameLayout frameLayout = inapp.getLayout(); // Get the layout created by the SDK
                     frameLayout.removeAllViews(); // Clear views already created by the SDK
                     frameLayout.addView(customView); // Add the created view to the layout that will be inflated by the SDK

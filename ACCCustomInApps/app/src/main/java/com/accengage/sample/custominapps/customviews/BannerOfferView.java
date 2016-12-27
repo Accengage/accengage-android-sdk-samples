@@ -23,7 +23,7 @@ import java.util.HashMap;
  * - inapp_text2: Content text 2
  * - inapp_bg: Background color
  */
-public class BannerOfferView extends AccengageView {
+public class BannerOfferView extends CustomInAppLayout {
 
     private TextView mTvTitle;
     private TextView mTvText1;
@@ -57,28 +57,30 @@ public class BannerOfferView extends AccengageView {
     }
 
     @Override
-    public void setInApp(final InApp inApp) {
+    public void populate(InApp inApp) {
+        super.populate(inApp);
+
         HashMap<String, String> customParameters = inApp.getCustomParameters();
 
-        mTvTitle.setText(customParameters.get(getResources().getString(R.string.inapp_title)));
-        mTvText1.setText(customParameters.get(getResources().getString(R.string.inapp_text1)));
-        mTvText2.setText(customParameters.get(getResources().getString(R.string.inapp_text2)));
+        mTvTitle.setText(customParameters.get("inapp_title"));
+        mTvText1.setText(customParameters.get("inapp_text1"));
+        mTvText2.setText(customParameters.get("inapp_text2"));
 
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.dismiss();
+                mInApp.dismiss();
             }
         });
 
         mContentView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                inApp.handleClick();
+                mInApp.handleClick();
                 Toast.makeText(getContext(), "BannerOffer was clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
-        mContentView.setBackgroundColor(Color.parseColor(customParameters.get(getResources().getString(R.string.inapp_bg))));
+        mContentView.setBackgroundColor(Color.parseColor(customParameters.get("inapp_bg")));
     }
 }

@@ -21,7 +21,7 @@ import java.util.HashMap;
  * - inapp_text1: Content title
  * - inapp_cta: Call to action text
  */
-public class PopupBasicView extends AccengageView {
+public class PopupBasicView extends CustomInAppLayout {
 
     private TextView mTvTitle;
     private TextView mTvDesc;
@@ -55,12 +55,13 @@ public class PopupBasicView extends AccengageView {
     }
 
     @Override
-    public void setInApp(final InApp inApp) {
+    public void populate(final InApp inApp) {
+        super.populate(inApp);
         HashMap<String, String> customParameters = inApp.getCustomParameters();
 
-        mTvTitle.setText(customParameters.get(getResources().getString(R.string.inapp_title)));
-        mTvDesc.setText(customParameters.get(getResources().getString(R.string.inapp_text1)));
-        mTvCTA.setText(customParameters.get(getResources().getString(R.string.inapp_cta)));
+        mTvTitle.setText(customParameters.get("inapp_title"));
+        mTvDesc.setText(customParameters.get("inapp_text1"));
+        mTvCTA.setText(customParameters.get("inapp_cta"));
 
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
