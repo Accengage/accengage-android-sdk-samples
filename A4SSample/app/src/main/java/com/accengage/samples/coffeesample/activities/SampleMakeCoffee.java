@@ -1,4 +1,4 @@
-package com.a4s.coffeesample.activities;
+package com.accengage.samples.coffeesample.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.a4s.coffeesample.R;
+import com.accengage.samples.coffeesample.R;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.Tag;
 

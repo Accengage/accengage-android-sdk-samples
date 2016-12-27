@@ -1,4 +1,4 @@
-package com.a4s.coffeesample.activities;
+package com.accengage.samples.coffeesample.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
-import com.a4s.coffeesample.R;
+import com.accengage.samples.coffeesample.R;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.Log;
 

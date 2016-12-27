@@ -1,4 +1,4 @@
-package com.a4s.coffeesample.receivers;
+package com.accengage.samples.coffeesample.receivers;
 
 import java.util.Set;
 
@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.a4s.coffeesample.activities.SampleSettings;
+import com.accengage.samples.coffeesample.activities.SampleSettings;
 
 /**
  * Handle custom parameters as explained on 
