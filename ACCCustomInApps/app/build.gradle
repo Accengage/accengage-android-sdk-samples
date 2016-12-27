@@ -21,6 +21,7 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.ad4screen.sdk:A4SSDK:3.5.1.0'
     compile "com.squareup.picasso:picasso:2.4.0"
+
+    compile 'com.ad4screen.sdk:A4SSDK:3.6.+'
 }

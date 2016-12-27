@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.accengage.sample.custominapps.customviews.AccengageView;
 import com.ad4screen.sdk.A4S;
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResult(InApp inapp) {
                 AccengageView customView = AccengageCustomViewFactory.create(MainActivity.this, inapp.getDisplayTemplate());
+                android.util.Log.d("MainActivity", "Template: " + inapp.getDisplayTemplate());
+                Toast.makeText(MainActivity.this, "Template: " + inapp.getDisplayTemplate(), Toast.LENGTH_LONG).show();
                 if (customView != null) {
                     customView.setInApp(inapp);
                     FrameLayout frameLayout = inapp.getLayout(); // Get the layout created by the SDK
