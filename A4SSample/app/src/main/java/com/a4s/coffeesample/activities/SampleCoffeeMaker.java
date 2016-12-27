@@ -9,11 +9,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.a4s.coffeesample.R;
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.Tag;
 
-@UseA4S
 @Tag(name = "CoffeeMaker")
 public class SampleCoffeeMaker extends Activity {
 
@@ -37,9 +35,24 @@ public class SampleCoffeeMaker extends Activity {
 			}
 		});
 	}
-	//
-	// Menu
-	//
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		A4S.get(this).setIntent(intent);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		A4S.get(this).startActivity(this);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		A4S.get(this).stopActivity(this);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

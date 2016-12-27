@@ -8,11 +8,9 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.a4s.coffeesample.R;
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.Tag;
 
-@UseA4S
 @Tag(name = "MakeCoffee")
 public class SampleMakeCoffee extends Activity {
 	private int step = 1;
@@ -57,7 +55,24 @@ public class SampleMakeCoffee extends Activity {
 				A4S.get(SampleMakeCoffee.this).trackEvent(Long.parseLong("5000"), "SendEvent");
 			}
 		});
+	}
 
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		A4S.get(this).setIntent(intent);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		A4S.get(this).startActivity(this);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		A4S.get(this).stopActivity(this);
 	}
 }
 

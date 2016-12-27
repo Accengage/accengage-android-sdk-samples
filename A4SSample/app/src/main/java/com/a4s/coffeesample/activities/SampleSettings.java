@@ -9,33 +9,32 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 
 import com.a4s.coffeesample.R;
-import com.a4s.sdk.plugins.annotations.UseA4S;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.Tag;
 
-@UseA4S
 @Tag(name = "CoffeeSettings")
 public class SampleSettings extends PreferenceActivity {
 
-	CheckBoxPreference inappDisplayLock;
+	private CheckBoxPreference mInappDisplayLock;
+
 	@Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 
 		addPreferencesFromResource(R.xml.samplesettings);
 		setTitle("View : CoffeeSettings");
-		inappDisplayLock = (CheckBoxPreference) findPreference("displayLocked");
+		mInappDisplayLock = (CheckBoxPreference) findPreference("displayLocked");
 
-		inappDisplayLock.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+		mInappDisplayLock.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object newValue) {
 				if(newValue.toString().equals("true")) {
-					inappDisplayLock.setChecked(true);
+					mInappDisplayLock.setChecked(true);
 					A4S.get(SampleSettings.this).setInAppDisplayLocked(true);
 				}
 				else {
-					inappDisplayLock.setChecked(false);
+					mInappDisplayLock.setChecked(false);
 					A4S.get(SampleSettings.this).setInAppDisplayLocked(false);
 				}
 				return false;
@@ -45,7 +44,8 @@ public class SampleSettings extends PreferenceActivity {
 	
 	@Override
 	protected void onResume() {
-		super.onResume();	
+		super.onResume();
+		A4S.get(this).startActivity(this);
 		// This activity can be opened through url schema 
 		// Here we are parsing uri for parameters
 		Intent intent = getIntent();
@@ -53,5 +53,18 @@ public class SampleSettings extends PreferenceActivity {
 			Uri uri = intent.getData();
 			//Use datas here and display anything you want relative to these parameters.
 		}
+	}
+
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		A4S.get(this).setIntent(intent);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		A4S.get(this).stopActivity(this);
 	}
 }

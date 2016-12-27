@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.a4s.coffeesample.activities.SampleSettings;
+
 /**
  * Handle custom parameters as explained on 
  * @see http://docs.accengage.com/display/AND/Android#Android-RetrievingIn-App/Push/InboxandotherCustomParameterswithaBroadcastReceiver
  * In this sample, this class is called as soon as an in-app or push is clicked
- * @author Jonathan Salamon
  *
  */
 public class CustomsParametersReceiver extends BroadcastReceiver {
