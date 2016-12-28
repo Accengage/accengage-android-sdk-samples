@@ -1,4 +1,4 @@
-package com.accengage.sample.custominapps;
+package com.accengage.samples.custominapps;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.accengage.sample.custominapps.customviews.CustomInAppLayout;
+import com.accengage.samples.custominapps.customviews.CustomInAppLayout;
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.InApp;
 import com.ad4screen.sdk.Log;

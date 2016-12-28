@@ -1,14 +1,14 @@
-package com.accengage.sample.custominapps;
+package com.accengage.samples.custominapps;
 
 import android.content.Context;
 
-import com.accengage.sample.custominapps.customviews.CustomInAppLayout;
-import com.accengage.sample.custominapps.customviews.BannerDownView;
-import com.accengage.sample.custominapps.customviews.BannerOfferPromoView;
-import com.accengage.sample.custominapps.customviews.BannerOfferView;
-import com.accengage.sample.custominapps.customviews.PopupBasicView;
-import com.accengage.sample.custominapps.customviews.PopupOfferView;
-import com.accengage.sample.custominapps.customviews.PopupPromoView;
+import com.accengage.samples.custominapps.customviews.CustomInAppLayout;
+import com.accengage.samples.custominapps.customviews.BannerDownView;
+import com.accengage.samples.custominapps.customviews.BannerOfferPromoView;
+import com.accengage.samples.custominapps.customviews.BannerOfferView;
+import com.accengage.samples.custominapps.customviews.PopupBasicView;
+import com.accengage.samples.custominapps.customviews.PopupOfferView;
+import com.accengage.samples.custominapps.customviews.PopupPromoView;
 
 public class AccengageCustomViewFactory {
 

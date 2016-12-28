@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25"
     defaultConfig {
-        applicationId "com.accengage.sample.custominapps"
+        applicationId "com.accengage.samples.custominapps"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1

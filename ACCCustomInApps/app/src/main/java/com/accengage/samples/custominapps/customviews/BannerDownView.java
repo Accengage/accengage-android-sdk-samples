@@ -1,4 +1,4 @@
-package com.accengage.sample.custominapps.customviews;
+package com.accengage.samples.custominapps.customviews;
 
 
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.accengage.sample.custominapps.R;
+import com.accengage.samples.custominapps.R;
 import com.ad4screen.sdk.InApp;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;

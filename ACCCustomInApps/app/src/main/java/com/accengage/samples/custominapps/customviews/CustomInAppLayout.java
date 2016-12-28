@@ -1,4 +1,4 @@
-package com.accengage.sample.custominapps.customviews;
+package com.accengage.samples.custominapps.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;

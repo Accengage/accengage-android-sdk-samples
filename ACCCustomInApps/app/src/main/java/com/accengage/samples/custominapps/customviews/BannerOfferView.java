@@ -1,4 +1,4 @@
-package com.accengage.sample.custominapps.customviews;
+package com.accengage.samples.custominapps.customviews;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,55 +9,51 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.accengage.sample.custominapps.R;
+import com.accengage.samples.custominapps.R;
 import com.ad4screen.sdk.InApp;
 
 import java.util.HashMap;
 
 /**
- * Template used: banner_offer_promo
+ * Template used: banner_offer
  *
  * Associated custom parameters:
  * - inapp_title: Title text
  * - inapp_text1: Content text
  * - inapp_text2: Content text 2
- * - inapp_promo: Promotion code
  * - inapp_bg: Background color
  */
-public class BannerOfferPromoView extends CustomInAppLayout {
+public class BannerOfferView extends CustomInAppLayout {
 
     private TextView mTvTitle;
-    private TextView mTvDesc;
-    private TextView mTvCTA;
-    private TextView mTvPromocode;
+    private TextView mTvText1;
+    private TextView mTvText2;
     private ImageView mCloseButton;
-    private RelativeLayout mContentLayout;
+    private RelativeLayout mContentView;
 
-    public BannerOfferPromoView(Context context) {
+    public BannerOfferView(Context context) {
         super(context);
         initViews();
     }
 
-    public BannerOfferPromoView(Context context, AttributeSet attrs) {
+    public BannerOfferView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initViews();
     }
 
-    public BannerOfferPromoView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BannerOfferView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initViews();
     }
 
-
     private void initViews() {
-        inflate(getContext(), R.layout.banner_offer_promo, this);
+        inflate(getContext(), R.layout.banner_offer, this);
 
         mTvTitle = (TextView) findViewById(R.id.title);
-        mTvDesc = (TextView) findViewById(R.id.t1);
-        mTvCTA = (TextView) findViewById(R.id.t2);
-        mTvPromocode = (TextView) findViewById(R.id.promocode);
+        mTvText1 = (TextView) findViewById(R.id.t1);
+        mTvText2 = (TextView) findViewById(R.id.t2);
         mCloseButton = (ImageView) findViewById(R.id.close_banner);
-        mContentLayout = (RelativeLayout) findViewById(R.id.relative_layout);
+        mContentView = (RelativeLayout) findViewById(R.id.relative_layout);
     }
 
     @Override
@@ -67,9 +63,8 @@ public class BannerOfferPromoView extends CustomInAppLayout {
         HashMap<String, String> customParameters = inApp.getCustomParameters();
 
         mTvTitle.setText(customParameters.get("inapp_title"));
-        mTvDesc.setText(customParameters.get("inapp_text1"));
-        mTvCTA.setText(customParameters.get("inapp_text2"));
-        mTvPromocode.setText(customParameters.get("inapp_promo"));
+        mTvText1.setText(customParameters.get("inapp_text1"));
+        mTvText2.setText(customParameters.get("inapp_text2"));
 
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,19 +73,14 @@ public class BannerOfferPromoView extends CustomInAppLayout {
             }
         });
 
-        mContentLayout.setOnClickListener(new OnClickListener() {
+        mContentView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 mInApp.handleClick();
-                Toast.makeText(getContext(), "BannerOfferPromo was clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "BannerOffer was clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
-
-        String background = customParameters.get("inapp_bg");
-        if (!background.isEmpty()) {
-            mContentLayout.setBackgroundColor(Color.parseColor(customParameters.get("inapp_bg")));
-        }
+        mContentView.setBackgroundColor(Color.parseColor(customParameters.get("inapp_bg")));
     }
 }
-
