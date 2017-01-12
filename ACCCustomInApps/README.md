@@ -39,8 +39,6 @@ To ensure a good and a smooth usage of this sample, there are a few important st
   | Landing page    | :white_large_square:                                |
   | Interstitial    | :white_check_mark:                                  |
   |                 |                                                     |
-
-  <p align="center" ><img src=".github/add_new_tempalte.gif?raw=true" alt="Accengage logo" title="Accengage logo"></p>
   
 3. Create your segment
   
