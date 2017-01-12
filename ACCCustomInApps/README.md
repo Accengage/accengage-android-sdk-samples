@@ -7,16 +7,14 @@
 
 This demo demostrates how to customize Accengage in-app messages. Six different in-app templates are presented in the project:
 
+<table>
+<tr>
+<td><img src=".github/PopupBasic.png"/></td> 
+<td><img src=".github/PopupOffer.png"/></td>
+<td><img src=".github/PopupPromo.png"/></td>
 <br/>
-<p align="center" >
-  <img src=".github/PopupBasic.png?raw=true" alt="Screenshot 1" title="Popup Basic">
-  &nbsp;
-  <img src=".github/PopupOffer.png?raw=true" alt="Screenshot 2" title="Popup Offer"> 
-  &nbsp;
-  <img src=".github/PopupPromo.png?raw=true" alt="Screenshot 3" title="Popup Promo"> 
-  
-</p>
-<br/>
+</tr>		 
+</table>
 
 # Usage
 
