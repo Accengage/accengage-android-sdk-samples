@@ -1,10 +1,13 @@
-package com.accengage.samples.geofences;
+package com.accengage.samples.geofences.activities;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
+import com.accengage.samples.geofences.BuildConfig;
+import com.accengage.samples.geofences.R;
 
 public class DBPreferencesActivity extends Activity {
 

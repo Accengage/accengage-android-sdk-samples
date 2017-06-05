@@ -9,6 +9,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
+import com.accengage.samples.geofences.activities.MainActivity;
 import com.ad4screen.sdk.Constants;
 
 import java.util.Arrays;

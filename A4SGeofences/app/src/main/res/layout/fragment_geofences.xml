@@ -4,7 +4,6 @@
 
     <ListView android:id="@+id/lv_geofences"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:paddingTop="20dp"/>
+        android:layout_height="fill_parent"/>
 
 </FrameLayout>

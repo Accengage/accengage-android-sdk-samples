@@ -1,6 +1,7 @@
-package com.accengage.samples.geofences;
+package com.accengage.samples.geofences.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,16 +13,24 @@ import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.accengage.samples.geofences.R;
+import com.accengage.samples.geofences.activities.DBPreferencesActivity;
+import com.accengage.samples.geofences.activities.GeofencesDetailsActivity;
 import com.ad4screen.sdk.Log;
 import com.ad4screen.sdk.contract.A4SContract;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GeofencesFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    private static final String[] PROJECTION = {
+    public static final String[] PROJECTION = {
             A4SContract.Geofences._ID,
             A4SContract.Geofences.SERVER_ID,
             A4SContract.Geofences.EXTERNAL_ID,
@@ -60,6 +69,7 @@ public class GeofencesFragment extends Fragment implements
         View layout = inflater.inflate(R.layout.fragment_geofences, container, false);
         ListView lv = (ListView) layout.findViewById(R.id.lv_geofences);
         lv.setAdapter(mAdapter);
+        initialiseClick(lv);
         return layout;
     }
 
@@ -141,39 +151,43 @@ public class GeofencesFragment extends Fragment implements
 
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-            TextView tv = (TextView) view.findViewById(R.id.tv_geofence_id);
+            TextView tv = (TextView) view.findViewById(R.id.tv_geofence_id_number);
             tv.setText(cursor.getString(0));
 
-            tv = (TextView) view.findViewById(R.id.tv_geofence_server_id);
+            tv = (TextView) view.findViewById(R.id.tv_geofence_server_id_name);
             tv.setText(cursor.getString(1));
 
             tv = (TextView) view.findViewById(R.id.tv_geofence_extrernal_id);
             tv.setText(cursor.getString(2));
 
-            tv = (TextView) view.findViewById(R.id.tv_geofence_name);
+            tv = (TextView) view.findViewById(R.id.tv_geofence_name_value);
             tv.setText(cursor.getString(3));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_latitude);
-            tv.setText(cursor.getString(4));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_longitude);
-            tv.setText(cursor.getString(5));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_radius);
-            tv.setText(cursor.getString(6));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_detected_time);
-            tv.setText(cursor.getString(7));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_notified_time);
-            tv.setText(cursor.getString(8));
-
-            tv = (TextView) view.findViewById(R.id.tv_geofence_detected_count);
-            tv.setText(String.valueOf(cursor.getInt(9)));
-
-            Double distance  = cursor.getDouble(12);
-            tv = (TextView) view.findViewById(R.id.tv_geofence_distance);
-            tv.setText(String.format("%.02f", distance));
         }
+
+        @Override
+        public Object getItem(int position) {
+            return super.getItem(position);
+        }
+    }
+
+    public void initialiseClick(ListView lv) {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor cursor = (Cursor) parent.getItemAtPosition(position);
+
+                ArrayList<String> cursorToSend = new ArrayList<>();
+                cursor.moveToPosition(position);
+                System.out.println(cursor.getColumnCount());
+                for (int i = 0; i < cursor.getColumnCount(); i++) {
+                    cursorToSend.add(cursor.getString(i));
+
+                }
+
+                Intent intent = new Intent(getContext(), GeofencesDetailsActivity.class);
+                intent.putStringArrayListExtra("cursor", cursorToSend);
+                startActivity(intent);
+            }
+        });
     }
 }

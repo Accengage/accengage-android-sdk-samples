@@ -1,4 +1,4 @@
-package com.accengage.samples.geofences;
+package com.accengage.samples.geofences.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.accengage.samples.geofences.R;
 import com.ad4screen.sdk.A4S;
 
 public class MainActivity extends AppCompatActivity {
