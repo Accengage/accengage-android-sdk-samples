@@ -1,9 +1,9 @@
 # A4S SDK Samples (Android)
 Some developers samples demonstrating how to integrate A4S SDK features into a fully working Android application
 
-- A4SBeacons : Enabling Beacon detection and interaction
+- AccBeacons : Enabling Beacon detection and interaction
 - A4SEvents : Working with analytics events
-- A4SGeofences : Enabling Geofences detection and interaction
+- AccGeofences : Enabling Geofences detection and interaction
 - A4SInbox : Implementing a fully working Push "Inbox"
 - A4SIntegration (DEPRECATED) : Integrating our SDK into an application without our "UseA4S" plugin
 - A4SSample : Basic Integration of our SDK into a simple application
