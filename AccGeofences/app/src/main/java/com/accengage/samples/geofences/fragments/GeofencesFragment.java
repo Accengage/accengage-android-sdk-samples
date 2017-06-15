@@ -2,7 +2,6 @@ package com.accengage.samples.geofences.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,16 +15,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.accengage.samples.geofences.R;
-import com.accengage.samples.geofences.activities.DBPreferencesActivity;
+import com.accengage.samples.geofences.Utils;
 import com.accengage.samples.geofences.activities.GeofencesDetailsActivity;
 import com.ad4screen.sdk.Log;
 import com.ad4screen.sdk.contract.A4SContract;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GeofencesFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -76,7 +73,7 @@ public class GeofencesFragment extends Fragment implements
     @Override
     public void onResume() {
         super.onResume();
-        String sortingField = getGeofenceSortingField();
+        String sortingField = Utils.getGeofenceSortingField(getActivity());
         if (!mSortingField.equals(sortingField)) {
             getLoaderManager().restartLoader(URL_LOADER, null, this);
         }
@@ -98,7 +95,7 @@ public class GeofencesFragment extends Fragment implements
 
     @Override
     public Loader<Cursor> onCreateLoader(int loaderId, Bundle args) {
-        mSortingField = getGeofenceSortingField();
+        mSortingField = Utils.getGeofenceSortingField(getActivity());
         Log.debug("GeofencesFragment|onCreateLoader sorting by " + mSortingField);
         switch (loaderId) {
             case URL_LOADER:
@@ -127,20 +124,11 @@ public class GeofencesFragment extends Fragment implements
         mAdapter.changeCursor(null);
     }
 
-    private String getGeofenceSortingField() {
-        SharedPreferences preferences = getActivity().getSharedPreferences(
-                DBPreferencesActivity.DBVIEW_PREFERENCES_FILE_NAME,
-                Context.MODE_PRIVATE);
-        String keyword = preferences.getString(getResources().getString(R.string.geofence_sorting_keyword), "");
-        boolean descOrder = preferences.getBoolean(getResources().getString(R.string.geofence_sorting_order), false);
-        if (descOrder) keyword += " DESC";
-        return keyword;
-    }
-
     private class GeofenceViewAdapter extends CursorAdapter {
 
-        public GeofenceViewAdapter(Context context) {
+        private GeofenceViewAdapter(Context context) {
             super(context, null, false);
+
         }
 
         @Override

@@ -70,9 +70,9 @@ public class DBViewerActivity extends AppCompatActivity {
         mViewPager.clearOnPageChangeListeners();
     }
 
-    public class MyPageAdapter extends FragmentPagerAdapter {
+    private class MyPageAdapter extends FragmentPagerAdapter {
 
-        public MyPageAdapter(FragmentManager fragmentManager) {
+        MyPageAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }
 
