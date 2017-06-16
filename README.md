@@ -5,7 +5,7 @@ Some developers samples demonstrating how to integrate A4S SDK features into a f
 - AccEvents : Working with analytics events
 - AccGeofences : Enabling Geofences detection and interaction
 - AccInbox : Implementing a fully working Push "Inbox"
-- A4SIntegration (DEPRECATED) : Integrating our SDK into an application without our "UseA4S" plugin
+- AccIntegration (DEPRECATED) : Integrating our SDK into an application without our "UseA4S" plugin
 - A4SSample : Basic Integration of our SDK into a simple application
 - AccCustomInApps : Advanced usage of custom In-Apps
 
