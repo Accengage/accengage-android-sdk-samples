@@ -48,7 +48,7 @@ public class ShowMessage extends Activity {
 		setTitle("View : ShowMessage");
 
 		Bundle bundle = getIntent().getExtras();
-		mMessage = (Message) bundle.getParcelable("message");
+		mMessage = bundle.getParcelable("message");
 		
 		//Show title
 		TextView title = (TextView) findViewById(R.id.titleMessage);

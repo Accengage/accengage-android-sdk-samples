@@ -54,7 +54,7 @@ public class InboxList extends Activity {
 	private ArrayList<Integer> mCheckedMessagePosition;
 	private int mArchivedMessages = 0;
 
-	private ArrayList<InboxMessage> mMessagesList = new ArrayList<InboxMessage>();
+	private ArrayList<InboxMessage> mMessagesList = new ArrayList<>();
 
 	private ListView mListView;
 	private MessagesAdapter mListAdapter;
@@ -76,7 +76,7 @@ public class InboxList extends Activity {
 
 		// Save checked message position in order to do grouped update (set
 		// read, unread, archive)
-		mCheckedMessagePosition = new ArrayList<Integer>();
+		mCheckedMessagePosition = new ArrayList<>();
 
 		// Setup Layout
 		mInboxSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeLayout);

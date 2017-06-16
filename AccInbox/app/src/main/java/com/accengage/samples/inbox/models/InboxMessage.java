@@ -32,15 +32,11 @@ public class InboxMessage {
 	}
 
 	public boolean isRead() {
-		if (mMessage == null)
-			return false;
-		return mMessage.isRead();
+		return mMessage != null && mMessage.isRead();
 	}
 	
 	public boolean isArchived() {
-		if (mMessage == null)
-			return false;
-		return mMessage.isArchived();
+		return mMessage != null && mMessage.isArchived();
 	}
 
 
@@ -53,15 +49,11 @@ public class InboxMessage {
 	}
 	
 	public boolean isDownloaded() {
-		if (mMessage == null)
-			return false;
-		return mMessage.isDownloaded();
+		return mMessage != null && mMessage.isDownloaded();
 	}
 	
 	public boolean isOutdated() {
-		if (mMessage == null)
-			return false;
-		return mMessage.isOutdated();
+		return mMessage != null && mMessage.isOutdated();
 	}
 
 	public Date getSendDate() {

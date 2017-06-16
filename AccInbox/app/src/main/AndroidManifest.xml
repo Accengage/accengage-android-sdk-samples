@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
@@ -22,7 +22,7 @@
 
         <activity
             android:name="com.accengage.samples.inbox.activities.InboxList"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Light" >
             <intent-filter>
@@ -34,7 +34,7 @@
 
         <activity
             android:name="com.accengage.samples.inbox.activities.ShowMessage"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Light" >
         </activity>

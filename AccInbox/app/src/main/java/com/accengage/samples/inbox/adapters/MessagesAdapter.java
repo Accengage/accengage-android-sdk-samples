@@ -19,9 +19,9 @@ import com.ad4screen.sdk.Message;
 public class MessagesAdapter extends BaseAdapter {
 
 	public interface OnMessageCheckedListener {
-		public void onMessageChecked(int position);
+		void onMessageChecked(int position);
 
-		public void onMessageUnChecked(int position);
+		void onMessageUnChecked(int position);
 	}
 
 	private OnMessageCheckedListener mListener;
