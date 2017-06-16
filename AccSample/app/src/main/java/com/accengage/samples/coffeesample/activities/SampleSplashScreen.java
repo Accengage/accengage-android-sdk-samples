@@ -61,7 +61,6 @@ public class SampleSplashScreen extends Activity {
 					// functionality that depends on this permission.
 					Log.verbose("SplashScreenActivity|ACCESS_FINE_LOCATION permission is not granted");
 				}
-				return;
 			}
 		}
 	}
