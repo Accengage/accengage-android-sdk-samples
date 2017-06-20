@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.accengage.samples.pushdemo"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -31,8 +32,6 @@ dependencies {
     compile 'com.google.firebase:firebase-core:9.6.1'
 
     compile 'com.ad4screen.sdk:A4SSDK:3.6.0'
-    compile 'com.ad4screen.sdk:plugin-firebase-messaging:1.0'
+    compile 'com.ad4screen.sdk:plugin-firebase-messaging:2.0'
 }
 
-
-apply plugin: 'com.google.gms.google-services'
