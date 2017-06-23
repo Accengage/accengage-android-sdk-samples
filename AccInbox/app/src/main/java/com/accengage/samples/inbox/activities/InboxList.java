@@ -424,7 +424,7 @@ public class InboxList extends Activity {
                     A4S.get(InboxList.this).updateMessages(mInbox);
 					// Re-display inbox
 					mInboxCallback.onResult(mInbox);
-
+					message.hasBeenOpenedByUser(InboxList.this);
 					message.display(getApplicationContext(), new Callback<Message>() {
 
 						@Override
