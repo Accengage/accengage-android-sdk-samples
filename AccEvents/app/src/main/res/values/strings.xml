@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Acc Events</string>
+    <string name="event_lead">Send lead</string>
+    <string name="event_cart">Send cart</string>
+    <string name="event_purchase">Send purchase</string>
+
+    <!-- Accengage SDK parameters -->
+
+    <!-- Credentials for 'Ap Demo Accengage Android Clients' -->
+    <string name="a4s_partner_id">comptedemosdk1e3b35fb8ad5024</string>
+    <string name="a4s_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
+
+    <string name="a4s_logging">true</string>
+
+</resources>

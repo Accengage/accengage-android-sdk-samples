@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="geofence_sorting_fields">
+        <item>Default</item>
+        <item>Name</item>
+        <item>Distance</item>
+        <item>Detected Count</item>
+        <item>Radius</item>
+        <item>Detected time</item>
+        <item>Notification time</item>
+        <item>External ID</item>
+    </string-array>
+    <string-array name="geofence_sorting_fields_values">
+        <item></item>
+        <item>name</item>
+        <item>distance</item>
+        <item>detected_count</item>
+        <item>radius</item>
+        <item>detected_time</item>
+        <item>notified_time</item>
+        <item>external_id</item>
+    </string-array>
+</resources>

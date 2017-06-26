@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tv_geofence_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:ellipsize="marquee"/>
+
+    <TextView
+        android:id="@+id/tv_geofence_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_geofence_name"
+        android:layout_toRightOf="@id/tv_geofence_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:ellipsize="marquee"/>
+
+    <TextView
+        android:id="@+id/tv_geofence_id_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_geofence_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_toLeftOf="@id/tv_geofence_id_number"
+        android:layout_toStartOf="@id/tv_geofence_id_number"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@id/tv_geofence_name"
+        android:id="@+id/tv_geofence_server_id"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Server id: " />
+
+    <TextView
+        android:id="@+id/tv_geofence_server_id_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_geofence_server_id"
+        android:layout_toRightOf="@id/tv_geofence_server_id"
+        android:layout_below="@id/tv_geofence_name"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+        android:id="@+id/tv_geofence_extrernal_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:layout_below="@id/tv_geofence_name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_geofence_name"
+        android:text="External id:"
+        android:layout_toLeftOf="@id/tv_geofence_extrernal_id"
+        android:layout_toStartOf="@id/tv_geofence_extrernal_id"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+</RelativeLayout>

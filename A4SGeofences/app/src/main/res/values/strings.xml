@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">A4S Geofences</string>
-
-    <string name="main_textview">
-        <![CDATA[
-        Please set some geofences into the user interface and try to enter or exit these geofences in order to trigger some pushes or In-App.<br><br>
-        If you want to mock location, you can use the following application :<br>com.lexa.fakegps
-        ]]></string>
-</resources>
