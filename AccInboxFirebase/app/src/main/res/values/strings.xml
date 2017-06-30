@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">AccInboxFirebase</string>
+
+    <string name="btn_">AccInboxFirebase</string>
+
+    <!-- Accengage SDK parameters -->
+
+    <!-- Credentials for 'Ap Demo Accengage Android Clients' -->
+    <string name="acc_partner_id">comptedemosdk1e3b35fb8ad5024</string>
+    <string name="acc_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
+    <string name="acc_sender_id">gcm:782822166525</string>
+
+    <string name="acc_logging">true</string>
+    <string name="acc_no_geoloc">true</string>
+
 </resources>
