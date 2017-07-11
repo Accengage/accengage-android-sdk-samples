@@ -123,9 +123,8 @@ public class ShowMessage extends Activity {
 
 				@Override
 				public void onClick(View v) {
-
+					inboxButton.hasBeenClickedByUser(getApplicationContext());
 					inboxButton.click(getApplicationContext());
-
 				}
 			});
 

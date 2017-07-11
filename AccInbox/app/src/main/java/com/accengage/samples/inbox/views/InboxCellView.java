@@ -69,6 +69,11 @@ public class InboxCellView extends LinearLayout {
 		mPosition = position;
 		mOnMessageCheckedListener = onMessageCheckedListener;
 
+		if (!mMessage.getMessage().isDisplayed()) {
+            mMessage.getMessage().hasBeenDisplayedToUser(getContext());
+            mMessage.getMessage().setDisplayed(true);
+        }
+
 		updateUI();
 		updateBackground(mMessage);
 		updateIconImage();
@@ -219,11 +224,11 @@ public class InboxCellView extends LinearLayout {
 		} else if (diffDays == 1) {
 			return getContext().getString(R.string.inbox_date_yesterday);
 		} else if (diffDays < 7) {
-			return getContext().getString(R.string.inbox_date_days_ago, diffDays);
+			return getContext().getString(R.string.inbox_date_days_ago, String.valueOf(diffDays));
 		} else if (diffDays < 15) {
 			return getContext().getString(R.string.inbox_date_last_week);
 		} else if (diffDays < 30) {
-			return getContext().getString(R.string.inbox_date_weeks_ago, diffDays / 7);
+			return getContext().getString(R.string.inbox_date_weeks_ago, String.valueOf(diffDays / 7));
 		} else if (diffDays < 60) {
 			return getContext().getString(R.string.inbox_date_last_month);
 		} else {
