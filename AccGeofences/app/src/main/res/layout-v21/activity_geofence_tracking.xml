@@ -21,6 +21,7 @@
         android:clipToPadding="true"
         android:padding="10dp"
         android:background="@android:color/white"
+        android:elevation="8dp"
         app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
         <RelativeLayout
@@ -32,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="17dp"
                 android:ellipsize="marquee" />
 
             <TextView
@@ -40,7 +41,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 />
 
@@ -50,9 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="#"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_toLeftOf="@id/geofence_id_number"
                 android:layout_toStartOf="@id/geofence_id_number"
-                android:layout_marginRight="5dp"
                 android:layout_marginEnd="5dp"
                 />
 

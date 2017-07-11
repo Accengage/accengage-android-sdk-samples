@@ -8,10 +8,13 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.view.View;
+import android.widget.TextView;
 
 import com.accengage.samples.geofences.GeofenceItem;
 import com.accengage.samples.geofences.R;
@@ -27,8 +30,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GeofenceTrackingActivity extends FragmentActivity implements OnMapReadyCallback, LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -36,7 +40,24 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
     Location mLocation;
     GoogleMap mGooglemap;
     String mSortingField = "";
-    List<GeofenceItem> mGeofenceItemList;
+    Map<String, GeofenceItem> mGeofenceItemMap = new HashMap<>();
+
+    // BottomSheet
+    TextView tvName;
+    TextView tvRadius;
+    TextView tvId;
+    TextView tvServerId;
+    TextView tvExternalID;
+    TextView tvLatitude;
+    TextView tvLongitude;
+    TextView tvDetectedTime;
+    TextView tvNotifiedTime;
+    TextView tvDetectedCount;
+    TextView tvDevideLatitude;
+    TextView tvDevideLongitude;
+    TextView tvDistance;
+
+    private BottomSheetBehavior mBottomSheetBehavior;
 
     // Identifies a particular Loader being used in this component
     private static final int URL_LOADER = 0;
@@ -68,6 +89,20 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
 
         // Initialises the CursorLoader
         getSupportLoaderManager().initLoader(URL_LOADER, null, this);
+
+        tvName = (TextView) findViewById(R.id.geofence_name);
+        tvRadius = (TextView) findViewById(R.id.tv_geofence_radius_value);
+        tvId = (TextView) findViewById(R.id.geofence_id_number);
+        tvServerId = (TextView) findViewById(R.id.tv_geofence_server_id_value);
+        tvExternalID = (TextView) findViewById(R.id.tv_geofence_external_id_value);
+        tvLatitude = (TextView) findViewById(R.id.tv_geofence_latitude_value);
+        tvLongitude = (TextView) findViewById(R.id.tv_geofence_longitude_value);
+        tvDetectedTime = (TextView) findViewById(R.id.tv_geofence_detected_time_value);
+        tvNotifiedTime = (TextView) findViewById(R.id.tv_geofence_notified_time_value);
+        tvDetectedCount = (TextView) findViewById(R.id.tv_geofence_detected_count_value);
+        tvDevideLatitude = (TextView) findViewById(R.id.tv_geofence_device_latitude_value);
+        tvDevideLongitude = (TextView) findViewById(R.id.tv_geofence_device_longitude_value);
+        tvDistance = (TextView) findViewById(R.id.tv_geofence_distance_value);
     }
 
     @Override
@@ -96,7 +131,6 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (mGooglemap != null && data != null) {
-            mGeofenceItemList = new ArrayList<>();
             data.moveToFirst();
             while (data.moveToNext()) {
                 GeofenceItem geofenceItem = new GeofenceItem();
@@ -116,22 +150,34 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
                 geofenceItem.setDistance(data.getString(Utils.DISTANCE));
 
                 drawDBGeofences(geofenceItem);
-                mGeofenceItemList.add(geofenceItem);
             }
+
+            mGooglemap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                @Override
+                public boolean onMarkerClick(Marker marker) {
+                    if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN){
+                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    }
+                    populateBottomSheetWithMarkerItem(marker.getTitle());
+                    return false;
+                }
+            });
         }
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        for (GeofenceItem geofenceItem : mGeofenceItemList) {
-            drawDBGeofences(geofenceItem);
+        for(Map.Entry<String, GeofenceItem> entry : mGeofenceItemMap.entrySet()) {
+            drawDBGeofences(entry.getValue());
         }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        View bottomSheet = findViewById(R.id.bottom_sheet);
         mGooglemap = googleMap;
         mLocation = getLastKnownLocation();
+
         if (mLocation != null) {
             LatLng myPosition = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
             mGooglemap.moveCamera(CameraUpdateFactory.newLatLng(myPosition));
@@ -139,6 +185,11 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
             checkLocationPermission();
             mGooglemap.setMyLocationEnabled(true);
         }
+
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        mBottomSheetBehavior.setHideable(true);
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        mBottomSheetBehavior.setPeekHeight(220);
     }
 
     private boolean checkLocationPermission() {
@@ -168,7 +219,6 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
     }
 
     private void drawDBGeofences(GeofenceItem geofenceItem) {
-
          LatLng myPosition = new LatLng(
                  Double.valueOf(geofenceItem.getLatitude()),
                  Double.valueOf(geofenceItem.getLongitude()));
@@ -179,9 +229,29 @@ public class GeofenceTrackingActivity extends FragmentActivity implements OnMapR
          Marker marker = mGooglemap.addMarker(mo);
          marker.showInfoWindow();
 
+         mGeofenceItemMap.put(geofenceItem.getName(), geofenceItem);
+
          mGooglemap.addCircle(new CircleOptions()
                  .center(myPosition)
                  .radius(Double.valueOf(geofenceItem.getRadius()))
                  .strokeColor(Color.RED));
+    }
+
+    private void populateBottomSheetWithMarkerItem(String name) {
+        GeofenceItem geofenceItem = mGeofenceItemMap.get(name);
+
+        tvName.setText(geofenceItem.getName());
+        tvRadius.setText(geofenceItem.getRadius());
+        tvId.setText(geofenceItem.getId());
+        tvServerId.setText(geofenceItem.getServerId());
+        tvExternalID.setText(geofenceItem.getExternalId());
+        tvLatitude.setText(geofenceItem.getLatitude());
+        tvLongitude.setText(geofenceItem.getLongitude());
+        tvDetectedTime.setText(geofenceItem.getDetectedTime());
+        tvNotifiedTime.setText(geofenceItem.getNotifiedTime());
+        tvDetectedCount.setText(geofenceItem.getDetectedCount());
+        tvDevideLatitude.setText(geofenceItem.getDeviceLatitude());
+        tvDevideLongitude.setText(geofenceItem.getDeviceLongitude());
+        tvDistance.setText(geofenceItem.getDistance());
     }
 }

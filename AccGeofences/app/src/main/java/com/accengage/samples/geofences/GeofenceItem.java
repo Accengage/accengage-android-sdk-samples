@@ -2,19 +2,19 @@ package com.accengage.samples.geofences;
 
 public class GeofenceItem {
 
-    private static String mID;
-    private static String mServerId;
-    private static String mExternalId;
-    private static String mName;
-    private static String mLatitude;
-    private static String mLongitude;
-    private static String mRadius;
-    private static String mDetectedTime;
-    private static String mNotifiedTime;
-    private static String mDetectedCount;
-    private static String mDeviceLatitude;
-    private static String mDeviceLongitude;
-    private static String mDistance;
+    private String mID;
+    private String mServerId;
+    private String mExternalId;
+    private String mName;
+    private String mLatitude;
+    private String mLongitude;
+    private String mRadius;
+    private String mDetectedTime;
+    private String mNotifiedTime;
+    private String mDetectedCount;
+    private String mDeviceLatitude;
+    private String mDeviceLongitude;
+    private String mDistance;
 
     public GeofenceItem () {
 
@@ -49,7 +49,7 @@ public class GeofenceItem {
     }
 
     public void setName(String name) {
-        GeofenceItem.mName = name;
+        mName = name;
     }
 
     public String getLatitude() {
@@ -57,7 +57,7 @@ public class GeofenceItem {
     }
 
     public void setLatitude(String latitude) {
-        GeofenceItem.mLatitude = latitude;
+        mLatitude = latitude;
     }
 
     public String getLongitude() {
@@ -65,7 +65,7 @@ public class GeofenceItem {
     }
 
     public void setLongitude(String longitude) {
-        GeofenceItem.mLongitude = longitude;
+        mLongitude = longitude;
     }
 
     public String getRadius() {
@@ -73,7 +73,7 @@ public class GeofenceItem {
     }
 
     public void setRadius(String radius) {
-        GeofenceItem.mRadius = radius;
+        mRadius = radius;
     }
 
     public String getDetectedTime() {
@@ -121,6 +121,6 @@ public class GeofenceItem {
     }
 
     public void setDistance(String distance) {
-        GeofenceItem.mDistance = distance;
+        mDistance = distance;
     }
 }
