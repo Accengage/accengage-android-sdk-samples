@@ -1,25 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.accengage.samples.beacons">
+    package="com.accengage.samples.beacons">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".activities.MainActivity"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/title_activity_coffee_maker"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -27,8 +26,9 @@
             android:name=".BeaconReceiver"
             android:permission="com.accengage.samples.beacons.permission.A4S_SEND">
             <intent-filter>
-                <action android:name="com.ad4screen.sdk.intent.action.TRIGGER"/>
-                <category android:name="com.ad4screen.sdk.intent.category.BEACON_NOTIFICATIONS"/>
+                <action android:name="com.ad4screen.sdk.intent.action.TRIGGER" />
+
+                <category android:name="com.ad4screen.sdk.intent.category.BEACON_NOTIFICATIONS" />
             </intent-filter>
         </receiver>
 

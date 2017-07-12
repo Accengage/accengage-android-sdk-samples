@@ -9,5 +9,6 @@
     <string name="acc_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
 
     <string name="acc_logging">true</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

@@ -1,7 +1,6 @@
 package com.accengage.samples.beacons.activities;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +9,11 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.accengage.samples.beacons.Beacon;
@@ -26,11 +27,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private static final int LOCATION_REQUEST = 1;
 
-    private RecyclerView mBeaconList;
+    RecyclerView mBeaconList;
     private BeaconAdapter mBeaconAdapter;
     private LinkedHashMap<String, Beacon> mBeacons = new LinkedHashMap<>();
 
@@ -72,7 +73,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         A4S.get(this).setPushNotificationLocked(false);
-        setContentView(R.layout.activity_beacon);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // Request location permission for beacons features
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
