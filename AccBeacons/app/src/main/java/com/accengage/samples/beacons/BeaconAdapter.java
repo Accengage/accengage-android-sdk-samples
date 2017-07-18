@@ -1,9 +1,18 @@
 package com.accengage.samples.beacons;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.accengage.samples.beacons.activities.DetailActivity;
+import com.accengage.samples.beacons.activities.MainActivity;
+import com.ad4screen.sdk.Log;
+
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -21,8 +30,17 @@ public class BeaconAdapter extends RecyclerView.Adapter<BeaconAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(BeaconAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final BeaconAdapter.ViewHolder holder, final int position) {
         holder.getCell().bind(getItem(position));
+        holder.mCell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                intent.putExtra("beacon", mDataset.get(getItemKey(holder.getAdapterPosition())));
+                v.getContext().startActivity(intent);
+                Log.warn("" + mDataset.get(getItemKey(holder.getAdapterPosition())).getDate());
+            }
+        });
     }
 
     private Beacon getItem(int position) {
@@ -52,6 +70,7 @@ public class BeaconAdapter extends RecyclerView.Adapter<BeaconAdapter.ViewHolder
         public ViewHolder(BeaconView v) {
             super(v);
             mCell = v;
+
         }
 
         public BeaconView getCell() {

@@ -2,10 +2,17 @@ package com.accengage.samples.beacons;
 
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+import com.ad4screen.sdk.Log;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Beacon {
+public class Beacon implements Parcelable {
 
     private String mId;
     private String mUuid;
@@ -17,6 +24,39 @@ public class Beacon {
     private String mAccuracy;
     private int mRssi;
     private Date mDate;
+    private DateFormat mSimpleDateFormat = SimpleDateFormat.getDateInstance();
+
+    private Beacon(Parcel in) {
+        mId = in.readString();
+        mUuid = in.readString();
+        mMajor = in.readInt();
+        mMinor = in.readInt();
+        mTransition = in.readInt();
+        mPower = in.readInt();
+        mDistance = in.readDouble();
+        mAccuracy = in.readString();
+        mRssi = in.readInt();
+        try {
+            mDate = mSimpleDateFormat.parse(in.readString());
+        } catch (ParseException e) {
+            Log.error("Date format not compatible : " + e);
+        }
+    }
+    public Beacon(){
+
+    }
+
+    public static final Creator<Beacon> CREATOR = new Creator<Beacon>() {
+        @Override
+        public Beacon createFromParcel(Parcel in) {
+            return new Beacon(in);
+        }
+
+        @Override
+        public Beacon[] newArray(int size) {
+            return new Beacon[size];
+        }
+    };
 
     public String getInternalId() {
         return mUuid + String.valueOf(mMajor) + String.valueOf(mMinor);
@@ -115,5 +155,24 @@ public class Beacon {
         beacon.setRssi(bundle.getInt("rssi"));
         beacon.setDate(new Date(bundle.getLong("date")));
         return beacon;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mId);
+        dest.writeString(mUuid);
+        dest.writeInt(mMajor);
+        dest.writeInt(mMinor);
+        dest.writeInt(mTransition);
+        dest.writeInt(mPower);
+        dest.writeDouble(mDistance);
+        dest.writeString(mAccuracy);
+        dest.writeInt(mRssi);
+        dest.writeString(mSimpleDateFormat.format(mDate));
     }
 }
