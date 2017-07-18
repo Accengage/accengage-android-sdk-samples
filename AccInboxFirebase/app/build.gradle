@@ -11,6 +11,7 @@ android {
         applicationId "com.accengage.samples.inbox.accinboxfirebase"
         minSdkVersion 14
         targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,6 +24,9 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -46,6 +50,10 @@ dependencies {
     implementation 'com.accengage.samples:A4SSamples:0.3'
     implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.0'
     implementation 'com.ad4screen.sdk:A4SSDK:3.6.0.1'
+
+    implementation 'com.google.firebase:firebase-messaging:10.2.6' // declare explicitly
+
+    implementation 'com.android.support:multidex:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
