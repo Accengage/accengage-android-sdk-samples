@@ -8,7 +8,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta2'
         classpath 'com.google.gms:google-services:3.1.0'
     }
 }
@@ -19,6 +19,10 @@ allprojects {
         jcenter()
         mavenLocal()
 
+        // Required for A4SSamples
+        maven {
+            url  "http://dl.bintray.com/accengage/maven"
+        }
         // Required for 'com.firebaseui:firebase-ui:1.2.0'
         maven {
             url 'https://maven.fabric.io/public'
