@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
     defaultConfig {
         applicationId "com.accengage.samples.pushdemo"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,13 +25,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
     testImplementation 'junit:junit:4.12'
 
-    implementation 'com.google.firebase:firebase-core:11.0.4'
+    implementation 'com.google.firebase:firebase-core:11.6.2'
 
-    implementation 'com.ad4screen.sdk:A4SSDK:3.6.3'
-    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.1'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.6.4'
+    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

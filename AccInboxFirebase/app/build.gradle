@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 
 ext.rxAndroidVersion = "2.0.1"
 ext.rxJavaVersion = "2.1.1"         // for explicit dependency needed for rxAndroid
-ext.supportVersion="26.0.0"
+ext.supportVersion="27.0.2"
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
     defaultConfig {
         applicationId "com.accengage.samples.inbox.accinboxfirebase"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         multiDexEnabled true
         versionCode 1
         versionName "1.0"
@@ -48,12 +48,17 @@ dependencies {
     implementation 'com.twitter.sdk.android:twitter:2.3.0'
 
     implementation 'com.accengage.samples:A4SSamples:0.3.1'
-    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.1'
-    implementation 'com.ad4screen.sdk:A4SSDK:3.6.3'
+    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.2'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.6.4'
 
-    implementation 'com.google.firebase:firebase-messaging:11.0.4' // declare explicitly
+    implementation 'com.google.firebase:firebase-messaging:11.6.2' // declare explicitly
+    implementation 'com.google.firebase:firebase-auth:11.6.2'
+    implementation 'com.google.firebase:firebase-database:11.6.2'
+    implementation 'com.google.android.gms:play-services-auth:11.6.2'
+    implementation 'com.google.android.gms:play-services-basement:11.6.2'
 
-    implementation 'com.android.support:multidex:1.0.1'
+
+    implementation 'com.android.support:multidex:1.0.2'
 }
 
 apply plugin: 'com.google.gms.google-services'
