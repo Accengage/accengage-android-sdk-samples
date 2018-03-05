@@ -47,15 +47,15 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation 'com.twitter.sdk.android:twitter:2.3.0'
 
-    implementation 'com.accengage.samples:A4SSamples:0.3.1'
-    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.2'
-    implementation 'com.ad4screen.sdk:A4SSDK:3.6.4'
+    implementation 'com.accengage.samples:A4SSamples:0.3.3'
+    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.3'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.6.5'
 
-    implementation 'com.google.firebase:firebase-messaging:11.6.2' // declare explicitly
-    implementation 'com.google.firebase:firebase-auth:11.6.2'
-    implementation 'com.google.firebase:firebase-database:11.6.2'
-    implementation 'com.google.android.gms:play-services-auth:11.6.2'
-    implementation 'com.google.android.gms:play-services-basement:11.6.2'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0' // declare explicitly
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-database:11.8.0'
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+    implementation 'com.google.android.gms:play-services-basement:11.8.0'
 
 
     implementation 'com.android.support:multidex:1.0.2'

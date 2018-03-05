@@ -28,10 +28,10 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.2'
     testImplementation 'junit:junit:4.12'
 
-    implementation 'com.google.firebase:firebase-core:11.6.2'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
 
-    implementation 'com.ad4screen.sdk:A4SSDK:3.6.4'
-    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.2'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.6.5'
+    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.3'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -26,5 +26,5 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     compile 'com.ad4screen.sdk:A4SSDK-Plugin-Beacons:1.2.1'
-    compile 'com.ad4screen.sdk:A4SSDK:3.6.4'
+    compile 'com.ad4screen.sdk:A4SSDK:3.6.5'
 }

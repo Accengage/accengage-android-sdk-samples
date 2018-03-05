@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.1'
     compile 'com.android.support:design:27.0.2'
 
-    compile 'com.ad4screen.sdk:A4SSDK:3.6.4'
+    compile 'com.ad4screen.sdk:A4SSDK:3.6.5'
 }
