@@ -26,9 +26,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.1'
     compile 'com.android.support:design:27.0.2'
     compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.ad4screen.sdk:A4SSDK:SNAPSHOT-3.6.5'
+    compile 'com.ad4screen.sdk:A4SSDK:3.6.5'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenLocal()
 }
