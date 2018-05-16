@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     @OnCheckedChanged(R.id.switch_optin_data)
     void onOptinDataCheckedChanged() {
         A4S.get(this).setOptinData(this, switchOptinData.isChecked() ? OptinType.YES : OptinType.NO);
+
+        if (switchOptinData.isChecked()) {
+            A4S.get(this).startActivity(this);
+        }
     }
 
     @OnCheckedChanged(R.id.switch_optin_geoloc)
