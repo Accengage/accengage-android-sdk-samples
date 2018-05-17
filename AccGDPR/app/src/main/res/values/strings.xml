@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AccGDPR</string>
+
+    <string name="tv_optin_data">OptinData</string>
+    <string name="tv_optin_geoloc">OptinGeoloc</string>
+
+    <string name="acc_partner_id">comptedemosdk1e3b35fb8ad5024</string>
+    <string name="acc_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
+    <string name="acc_optin_data">true</string>
+    <string name="acc_logging">true</string>
+</resources>
