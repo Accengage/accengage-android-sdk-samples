@@ -1,7 +1,9 @@
 package com.accengage.accgdpr;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 
@@ -14,16 +16,14 @@ import butterknife.OnCheckedChanged;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AlertDialog.Builder builder;
+
     @BindView(R.id.switch_optin_data) SwitchCompat switchOptinData;
     @BindView(R.id.switch_optin_geoloc) SwitchCompat switchOptinGeoloc;
 
     @OnCheckedChanged(R.id.switch_optin_data)
     void onOptinDataCheckedChanged() {
-        A4S.get(this).setOptinData(this, switchOptinData.isChecked() ? OptinType.YES : OptinType.NO);
-
-        if (switchOptinData.isChecked()) {
-            A4S.get(this).startActivity(this);
-        }
+        setOptinData(switchOptinData.isChecked());
     }
 
     @OnCheckedChanged(R.id.switch_optin_geoloc)
@@ -63,5 +63,34 @@ public class MainActivity extends AppCompatActivity {
 
         switchOptinData.setChecked(OptinType.YES.equals(isOptinData));
         switchOptinGeoloc.setChecked(OptinType.YES.equals(isOptinGeoloc));
+
+        if (!OptinType.YES.equals(isOptinData)) {
+            buildPopUpOptinData();
+            builder.show();
+        }
+    }
+
+    private void buildPopUpOptinData() {
+        builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_pop_up_optin_data)
+                .setMessage(R.string.msg_pop_up_optin_geoloc)
+                .setPositiveButton(R.string.yes_pop_up_optin_geoloc, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        setOptinData(true);
+                        switchOptinData.setChecked(true);
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton(R.string.no_pop_up_optin_geoloc, null)
+                .setCancelable(false);
+    }
+
+    private void setOptinData(boolean isOptin) {
+        A4S.get(this).setOptinData(this, isOptin ? OptinType.YES : OptinType.NO);
+
+        if (isOptin) {
+            A4S.get(this).startActivity(this);
+        }
     }
 }
