@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 ext.rxAndroidVersion = "2.0.1"
 ext.rxJavaVersion = "2.1.1"         // for explicit dependency needed for rxAndroid
@@ -59,6 +60,10 @@ dependencies {
 
 
     implementation 'com.android.support:multidex:1.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}
