@@ -1,30 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.accengage.samples.inbox" >
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <application
-        android:allowBackup="false"
+        android:name=".app.InboxApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
-        <receiver
-            android:name="com.ad4screen.sdk.GCMHandler"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-
-                <category android:name="${applicationId}" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name="com.accengage.samples.inbox.activities.InboxList"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.Light" >
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,11 +19,9 @@
         </activity>
 
         <activity
-            android:name="com.accengage.samples.inbox.activities.ShowMessage"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.Light" >
-        </activity>
+            android:name=".messages.MessageActivity"
+            android:label="@string/message" />
+
     </application>
 
 </manifest>
