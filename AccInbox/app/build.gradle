@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 27
@@ -28,7 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     // SDK
-    implementation 'com.ad4screen.sdk:A4SSDK:3.7.2'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.8.0'
 
     // Recycler View
     implementation 'com.android.support:recyclerview-v7:27.1.0'
@@ -36,10 +35,6 @@ dependencies {
     // ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 
 repositories {

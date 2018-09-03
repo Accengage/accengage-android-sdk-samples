@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 
 ext.rxAndroidVersion = "2.0.1"
 ext.rxJavaVersion = "2.1.1"         // for explicit dependency needed for rxAndroid
@@ -50,7 +49,7 @@ dependencies {
 
     implementation 'com.accengage.samples:A4SSamples:0.3.3'
     implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.4.0'
-    implementation 'com.ad4screen.sdk:A4SSDK:3.7.0'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.8.0'
 
     implementation 'com.google.firebase:firebase-messaging:11.8.0' // declare explicitly
     implementation 'com.google.firebase:firebase-auth:11.8.0'
@@ -60,7 +59,6 @@ dependencies {
 
 
     implementation 'com.android.support:multidex:1.0.2'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
