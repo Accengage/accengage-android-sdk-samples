@@ -29,6 +29,13 @@
             android:orientation="vertical"
             android:layout_below="@+id/custom_view" >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Instakilogram Profile"
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/username"
                 android:layout_width="wrap_content"

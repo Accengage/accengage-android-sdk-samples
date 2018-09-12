@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 A4S.get(getApplicationContext()).updateDeviceInformation(deviceInformation);
                 Snackbar.make(findViewById(R.id.main_view), "Sending the data to accengage database", Snackbar.LENGTH_LONG).show();
 
-                showEasterEgg();
+                easterEgg(mAgeNumberPicker.getValue());
             }
         });
 
@@ -90,13 +90,18 @@ public class MainActivity extends AppCompatActivity {
 
         mAgeNumberPicker.setMinValue(0);
         mAgeNumberPicker.setMaxValue(80);
-        mAgeNumberPicker.setValue(25);
+        mAgeNumberPicker.setValue(15);
         mAgeNumberPicker.setWrapSelectorWheel(true);
     }
 
-    private void showEasterEgg() {
+    private void easterEgg(int age) {
+        if(age < 20)
+            mEasterEggMessage.setText("Wait, what? No way! You are definitely not " + age + "...");
+        else if(age > 20 && age < 30)
+            mEasterEggMessage.setText("Oh, you are " + age + "! Me too, we are twins!");
+        else if(age > 40)
+            mEasterEggMessage.setText("Really, " + age + "? You look way younger. I was barely giving you " + (age - 6));
         mEasterEggMessage.setVisibility(View.VISIBLE);
-        mEasterEggMessage.setText("No wayyy ! You are definitely not " + mAgeNumberPicker.getValue() + "...");
     }
 
     private void hideEasterEgg() {
