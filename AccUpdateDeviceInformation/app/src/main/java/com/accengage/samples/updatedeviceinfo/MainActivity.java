@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 deviceInformation.set("age", mAgeNumberPicker.getValue());
                 deviceInformation.increment("nb_profile_adding", 1);
                 A4S.get(getApplicationContext()).updateDeviceInformation(deviceInformation);
-                Snackbar.make(findViewById(R.id.main_view), "Sending the data to accengage database", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.main_view), "Sending the data to Accengage database", Snackbar.LENGTH_LONG).show();
 
                 easterEgg(mAgeNumberPicker.getValue());
             }
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 deviceInformation.delete("age");
                 deviceInformation.decrement("nb_profile_adding", 1);
                 A4S.get(getApplicationContext()).updateDeviceInformation(deviceInformation);
-                Snackbar.make(findViewById(R.id.main_view), "Deleting the data from accengage database", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.main_view), "Deleting the data from Accengage database", Snackbar.LENGTH_LONG).show();
 
                 hideEasterEgg();
             }
