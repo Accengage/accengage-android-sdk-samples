@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Acc Device Tags</string>
+    <string name="event_lead">Send lead</string>
+    <string name="event_cart">Send cart</string>
+    <string name="event_purchase">Send purchase</string>
+
+    <!-- Accengage SDK parameters -->
+
+    <!-- Credentials for 'Ap Demo Accengage Android Clients' -->
+    <string name="acc_partner_id">comptedemosdk1e3b35fb8ad5024</string>
+    <string name="acc_private_key">78dbaf3fac56784aa5f26a3fcf27996983b892fd</string>
+
+    <string name="acc_logging">true</string>
+
+    <string name="m1_easter_egg">M1 - Ohhh Champs Elysées pala palapa, Ohhh Champs Elysées pala palapa</string>
+    <string name="m2_easter_egg">M2 - Please, beware of pick pockets</string>
+    <string name="m3_easter_egg">M3 - Oh, that\'s my line too!</string>
+    <string name="m6_easter_egg">M6 - Come see the \"Tour Eiffel\"</string>
+    <string name="m8_easter_egg">M8 - So much stops on this line</string>
+    <string name="m11_easter_egg">M11 - Somebody really take this line? I just thought this line was a legend</string>
+    <string name="m13_easter_egg">M13 - The famous one… There are so many people on this line, looks like a social media network</string>
+    <string name="m14_easter_egg">M14 - The best one, clean and fast</string>
+    <string name="rer_a_easter_egg">RER A - Avant de descendre, assurez-vous de ne rien oublier à bord.\nPlease make sure you collect all your belongings before leaving the train.\nPor favor, no olviden de recojer todo su equipaje</string>
+    <string name="rer_b_easter_egg">RER B - Does somebody can fix this line please?</string>
+    <string name="rer_c_easter_egg">RER C - Please, just wait…</string>
+    <string name="rer_d_easter_egg">TRER D - he legend says that you can see some knights and dragons fighting in faraway lands with this line</string>
+    <string name="rer_e_easter_egg">RER E - Sorry, line canceled</string>
+
+</resources>

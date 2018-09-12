@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/custom_view"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/custom_view" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Welcome to the R4TP - 5NCF app"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="Traffic Alerts on Paris Subway :"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Problem can occurs on the train traffic. Even (often) on the line you are taking every single day...\n\nAdd your lines, we'll keep you in touch if some disruption could affect your travel."/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:text="Métro"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ToggleButton
+                    android:id="@+id/metro1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M1"
+                    android:textOff="M1"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M2"
+                    android:textOff="M2"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M3"
+                    android:textOff="M3"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M4"
+                    android:textOff="M4"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M5"
+                    android:textOff="M5"
+                    android:onClick="sendDeviceTag" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ToggleButton
+                    android:id="@+id/metro6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M6"
+                    android:textOff="M6"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M7"
+                    android:textOff="M7"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M8"
+                    android:textOff="M8"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M9"
+                    android:textOff="M9"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M10"
+                    android:textOff="M10"
+                    android:onClick="sendDeviceTag" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ToggleButton
+                    android:id="@+id/metro11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M11"
+                    android:textOff="M11"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M12"
+                    android:textOff="M12"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M13"
+                    android:textOff="M13"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/metro14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="M14"
+                    android:textOff="M14"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:text="RER"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ToggleButton
+                    android:id="@+id/rer_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="A"
+                    android:textOff="A"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/rer_b"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="B"
+                    android:textOff="B"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/rer_c"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="C"
+                    android:textOff="C"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/rer_d"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="D"
+                    android:textOff="D"
+                    android:onClick="sendDeviceTag" />
+
+                <ToggleButton
+                    android:id="@+id/rer_e"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:textOn="E"
+                    android:textOff="E"
+                    android:onClick="sendDeviceTag" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/easter_egg_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="#B6B6B6"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
