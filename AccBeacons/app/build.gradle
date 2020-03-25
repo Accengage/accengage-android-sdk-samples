@@ -2,8 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '27.0.1'
-
     defaultConfig {
         applicationId "com.accengage.samples.beacons"
         minSdkVersion 18

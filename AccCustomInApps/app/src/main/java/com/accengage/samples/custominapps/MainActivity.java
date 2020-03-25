@@ -2,7 +2,7 @@ package com.accengage.samples.custominapps;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -103,19 +103,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        getA4S().startActivity(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        getA4S().stopActivity(this);
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        getA4S().setIntent(intent);
     }
 
     public A4S getA4S() {
