@@ -105,16 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-    }
-
     public A4S getA4S() {
         return A4S.get(this);
     }
