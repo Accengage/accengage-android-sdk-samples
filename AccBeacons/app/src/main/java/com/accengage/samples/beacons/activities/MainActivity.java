@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.accengage.samples.beacons.Beacon;
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST);
         }
 
-        mBeaconList = (RecyclerView) findViewById(R.id.listBeacons);
+        mBeaconList = findViewById(R.id.listBeacons);
         mBeaconList.setHasFixedSize(true);
         mBeaconList.setLayoutManager(new LinearLayoutManager(this));
         mBeaconList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -99,20 +99,17 @@ public class MainActivity extends Activity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        A4S.get(this).startActivity(this);
         listenBeacons();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        A4S.get(this).stopActivity(this);
         unlistenBeacons();
     }
 
