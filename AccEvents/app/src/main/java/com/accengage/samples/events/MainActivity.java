@@ -4,11 +4,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.ad4screen.sdk.A4S;
@@ -69,24 +69,6 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     LOCATION_REQUEST);
         }
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        A4S.get(this).startActivity(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        A4S.get(this).stopActivity(this);
     }
 
 }

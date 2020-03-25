@@ -6,17 +6,17 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/custom_view"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" />
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_marginTop="@dimen/activity_horizontal_margin"
