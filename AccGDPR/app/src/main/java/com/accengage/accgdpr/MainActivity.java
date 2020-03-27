@@ -2,8 +2,8 @@ package com.accengage.accgdpr;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.ad4screen.sdk.A4S;
 import com.ad4screen.sdk.OptinType;
@@ -20,10 +20,6 @@ public class MainActivity extends AppCompatActivity {
     @OnCheckedChanged(R.id.switch_optin_data)
     void onOptinDataCheckedChanged() {
         A4S.get(this).setOptinData(this, switchOptinData.isChecked() ? OptinType.YES : OptinType.NO);
-
-        if (switchOptinData.isChecked()) {
-            A4S.get(this).startActivity(this);
-        }
     }
 
     @OnCheckedChanged(R.id.switch_optin_geoloc)
@@ -32,29 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        A4S.get(this).startActivity(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        A4S.get(this).stopActivity(this);
     }
 
     private void initView() {
