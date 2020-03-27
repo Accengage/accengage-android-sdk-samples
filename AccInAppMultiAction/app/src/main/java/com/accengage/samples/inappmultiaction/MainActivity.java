@@ -3,7 +3,7 @@ package com.accengage.samples.inappmultiaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -121,24 +121,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        A4S.get(this).startActivity(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        A4S.get(this).stopActivity(this);
-    }
-
-
 }
