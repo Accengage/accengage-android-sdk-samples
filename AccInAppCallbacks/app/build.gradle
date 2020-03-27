@@ -1,13 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.2'
-
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.accengage.samples.inappcallbacks"
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 16
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -22,8 +20,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.ad4screen.sdk:A4SSDK:3.8.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.ad4screen.sdk:A4SSDK:4.1.2'
 }
 repositories {
     mavenCentral()
