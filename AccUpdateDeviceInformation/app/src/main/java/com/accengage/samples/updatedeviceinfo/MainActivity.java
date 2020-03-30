@@ -2,9 +2,9 @@ package com.accengage.samples.updatedeviceinfo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -62,24 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 hideEasterEgg();
             }
         });
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        A4S.get(this).startActivity(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        A4S.get(this).stopActivity(this);
     }
 
     private void initView() {
