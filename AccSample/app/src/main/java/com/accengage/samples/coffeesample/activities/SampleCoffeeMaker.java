@@ -37,24 +37,6 @@ public class SampleCoffeeMaker extends Activity {
 	}
 
 	@Override
-	protected void onNewIntent(Intent intent) {
-		super.onNewIntent(intent);
-		A4S.get(this).setIntent(intent);
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		A4S.get(this).startActivity(this);
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		A4S.get(this).stopActivity(this);
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_coffee_maker, menu);
 		return true;

@@ -45,8 +45,7 @@ public class SampleSettings extends PreferenceActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		A4S.get(this).startActivity(this);
-		// This activity can be opened through url schema 
+		// This activity can be opened through url schema
 		// Here we are parsing uri for parameters
 		Intent intent = getIntent();
 		if (intent != null && intent.getData() != null) {
@@ -55,16 +54,4 @@ public class SampleSettings extends PreferenceActivity {
 		}
 	}
 
-
-	@Override
-	protected void onNewIntent(Intent intent) {
-		super.onNewIntent(intent);
-		A4S.get(this).setIntent(intent);
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		A4S.get(this).stopActivity(this);
-	}
 }
