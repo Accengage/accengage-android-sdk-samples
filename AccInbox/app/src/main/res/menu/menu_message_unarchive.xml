@@ -1,9 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item
-        android:id="@+id/menu_unarchive"
-        android:orderInCategory="3"
-        android:showAsAction="ifRoom"
-        android:title="Restore">
-    </item>
-
-</menu>

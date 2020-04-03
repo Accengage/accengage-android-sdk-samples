@@ -1,7 +1,7 @@
 package com.accengage.samples.pushdemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ad4screen.sdk.A4S;
@@ -12,23 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        A4S.get(this).setIntent(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        A4S.get(this).startActivity(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        A4S.get(this).stopActivity(this);
     }
 }

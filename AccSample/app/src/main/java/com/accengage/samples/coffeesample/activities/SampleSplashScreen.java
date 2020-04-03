@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.accengage.samples.coffeesample.R;
 import com.ad4screen.sdk.A4S;
@@ -63,24 +63,6 @@ public class SampleSplashScreen extends Activity {
 				}
 			}
 		}
-	}
-
-	@Override
-	protected void onNewIntent(Intent intent) {
-		super.onNewIntent(intent);
-		A4S.get(this).setIntent(intent);
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		A4S.get(this).startActivity(this);
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		A4S.get(this).stopActivity(this);
 	}
 
     private void startSampleCoffeeMaker(int delay) {

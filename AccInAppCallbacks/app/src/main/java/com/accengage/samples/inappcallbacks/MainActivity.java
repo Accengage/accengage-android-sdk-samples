@@ -1,7 +1,7 @@
 package com.accengage.samples.inappcallbacks;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
 import com.ad4screen.sdk.A4S;
@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart");
-        A4S.get(this).startActivity(this);
 
         // register in-app callbacks
         A4S.get(this).setInAppReadyCallback(false, new A4S.Callback<InApp>() {
@@ -82,24 +81,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop");
-        A4S.get(this).stopActivity(this); // in-app callbacks are unregistered here
-    }
-
 }

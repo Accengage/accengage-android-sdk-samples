@@ -48,8 +48,8 @@ dependencies {
     implementation 'com.twitter.sdk.android:twitter:2.3.0'
 
     implementation 'com.accengage.samples:A4SSamples:0.3.3'
-    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.3'
-    implementation 'com.ad4screen.sdk:A4SSDK:3.6.5'
+    implementation 'com.ad4screen.sdk:plugin-firebase-messaging:2.4.0'
+    implementation 'com.ad4screen.sdk:A4SSDK:3.8.0'
 
     implementation 'com.google.firebase:firebase-messaging:11.8.0' // declare explicitly
     implementation 'com.google.firebase:firebase-auth:11.8.0'
@@ -62,3 +62,6 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}
