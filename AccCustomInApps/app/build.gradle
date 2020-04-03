@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.1'
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.accengage.samples.custominapps"
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 16
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,9 +19,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.0.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "com.squareup.picasso:picasso:2.4.0"
-    implementation 'com.ad4screen.sdk:A4SSDK:3.8.0'
+    implementation 'com.ad4screen.sdk:A4SSDK:4.1.2'
 }
 repositories {
     mavenCentral()

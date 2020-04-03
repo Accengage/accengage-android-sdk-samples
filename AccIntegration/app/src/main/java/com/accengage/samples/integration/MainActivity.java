@@ -1,10 +1,11 @@
 package com.accengage.samples.integration;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.ad4screen.sdk.activities.A4SActivity;
 
-public class MainActivity extends A4SActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
