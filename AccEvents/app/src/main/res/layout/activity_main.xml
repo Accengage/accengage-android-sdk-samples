@@ -6,51 +6,73 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/custom_view"
-            android:layout_height="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/custom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
 
-            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
-                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary" />
-
-        </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_view"
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_vertical_margin"
         android:layout_marginRight="@dimen/activity_vertical_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/custom_view">
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_weight="1">
 
         <Button
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/event_lead"
             android:id="@+id/event_lead"
             style="?android:attr/buttonStyle"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/event_lead" />
 
         <Button
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/event_cart"
             android:id="@+id/event_cart"
             style="?android:attr/buttonStyle"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/event_cart" />
 
         <Button
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/event_purchase"
             android:id="@+id/event_purchase"
             style="?android:attr/buttonStyle"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/event_purchase" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_layout1"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/event_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Send Custom Event" />
     </LinearLayout>
 
     </RelativeLayout>
