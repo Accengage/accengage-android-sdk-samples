@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+name: sync-repo
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+
+on: push
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: repo-sync
+      uses: wei/git-sync@v2
+      with:
+        source_repo: "Accengage/accengage-android-sdk-samples"
+        source_branch: "*"
+        destination_repo: "urbanairship/accengage-android-sdk-samples"
+        destination_branch: "*"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
